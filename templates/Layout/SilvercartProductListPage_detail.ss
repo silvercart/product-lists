@@ -1,6 +1,8 @@
 <div id="col1">
     <div id="col1_content" class="clearfix">
     <% include SilvercartBreadCrumbs %>
+
+<% if CurrentRegisteredCustomer %>
         
     <% if CurrentList %>
         <% control CurrentList %>
@@ -39,6 +41,9 @@
     <% else %>
         <h3><% _t('NO_LIST_AVAILABLE') %></h3>
     <% end_if %>
+<% else %>
+    <% include SilvercartMyAccountLoginOrRegister %>
+<% end_if %>
     </div>
 </div>
 <div id="col3">
