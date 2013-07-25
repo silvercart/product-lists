@@ -287,7 +287,8 @@ class SilvercartProductListPage_Controller extends SilvercartMyAccountHolder_Con
         $actions            = new DataObjectSet();
         foreach ($registered_actions as $action) {
             $actionObject = new $action();
-            if ($actionObject->canView($list)) {
+            if ($actionObject->canView($list) &&
+                $actionObject->isVisible()) {
                 $actions->push($actionObject);
             }
         }

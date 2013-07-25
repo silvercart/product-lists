@@ -56,6 +56,18 @@ class SilvercartProductListAction extends Controller {
     public static $blacklisted_actions = array();
     
     /**
+     * Returns whether this action is visible
+     * 
+     * @return boolean
+     * 
+     * @author Sebastian Diel <sdiel@pixeltricks.de>
+     * @since 25.07.2013
+     */
+    public function isVisible() {
+        return true;
+    }
+    
+    /**
      * Returns the linkt to execute the action.
      * If $action is given, the alternative action will be used instead.
      * 
