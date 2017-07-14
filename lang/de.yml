@@ -1,5 +1,6 @@
 de:
     SilvercartProductList:
+        AccountRequired: 'Sie müssen angemeldet sein, um eine Merkliste zu verwenden. Zur Anmeldung?'
         PLURALNAME: 'Artikellisten'
         SINGULARNAME: 'Artikelliste'
         CreateNewList: 'Neue Liste erstellen'

@@ -3,11 +3,13 @@ $(document).ready(function() {
         var uri       = document.baseURI ? document.baseURI : '/',
             productID = $(this).data('product-id'),
             list      = $('ul', $(this).parent('div'));
+                console.log('asd');
         var result    = $.ajax({
             url:        uri + 'silvercart-product-list/getLists/',
             dataType:   'json',
             async:      false,
             success:    function(data) {
+                console.log(data);
                 $('li', list).each(function() {
                     $(this).remove();
                 });

@@ -41,34 +41,53 @@ class SilvercartProductListActionHandler extends Controller {
      * @since 12.03.2013
      */
     public function addToList(SS_HTTPRequest $request) {
-        $params     = $request->allParams();
-        $productID  = $params['ID'];
-        $listID     = $params['OtherID'];
+        $customer = SilvercartCustomer::currentUser();
+        if ($customer instanceof Member &&
+            $customer->isRegisteredCustomer()) {
+            
+            $params     = $request->allParams();
+            $productID  = $params['ID'];
+            $listID     = $params['OtherID'];
 
-        if ($listID == 'new') {
-            $list = new SilvercartProductList();
-            $list->MemberID = Member::currentUserID();
-            $list->write();
-        } else {
-            $list = SilvercartCustomer::currentUser()->SilvercartProductLists()->byID($listID);
-        }
-        
-        if ($list instanceof SilvercartProductList) {
-            $product = SilvercartProduct::get()->byID($productID);
-            if ($product instanceof SilvercartProduct &&
-                $product->canView(SilvercartCustomer::currentUser())) {
-                
-                $list->addProduct($product);
+            if ($listID == 'new') {
+                $list = new SilvercartProductList();
+                $list->MemberID = $customer->ID;
+                $list->write();
+            } else {
+                $list = $customer->SilvercartProductLists()->byID($listID);
             }
+
+            if ($list instanceof SilvercartProductList) {
+                $product = SilvercartProduct::get()->byID($productID);
+                if ($product instanceof SilvercartProduct &&
+                    $product->canView($customer)) {
+
+                    $list->addProduct($product);
+                }
+            }
+            $this->redirectBack();
+        } else {
+            $this->redirect(SilvercartTools::PageByIdentifierCode('SilvercartMyAccountHolder')->Link());
         }
-        $this->redirectBack();
     }
     
+    /**
+     * Returns the current customers lists as a JSON string.
+     * 
+     * @return string
+     */
     public function getLists() {
         $customer = SilvercartCustomer::currentUser();
-        $map = array(
-                'new' => _t('SilvercartProductList.CreateNewList'),
-        ) + $customer->SilvercartProductLists()->map()->toArray();
+        if ($customer instanceof Member &&
+            $customer->isRegisteredCustomer()) {
+            $map = array(
+                    'new' => _t('SilvercartProductList.CreateNewList'),
+            ) + $customer->SilvercartProductLists()->map()->toArray();
+        } else {
+            $map = array(
+                'new' => _t('SilvercartProductList.AccountRequired'),
+            );
+        }
         $json = json_encode($map);
         return $json;
     }
