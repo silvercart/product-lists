@@ -18,7 +18,7 @@
  * @since 24.04.2013
  * @license see license file in modules base directory
  */
-class SilvercartProductListMyAccountHolder_Controller extends DataObjectDecorator {
+class SilvercartProductListMyAccountHolder_Controller extends DataExtension {
     
     /**
      * Current context list.

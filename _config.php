@@ -9,18 +9,9 @@
  * @ignore
  */
 
-Director::addRules(
-        100,
-        array(
-            'silvercart-product-list/$Action/$ID/$OtherID' => 'SilvercartProductListActionHandler',
-        )
-);
-
-Object::add_extension('Member',                                 'SilvercartProductListCustomer');
-Object::add_extension('SilvercartProduct',                      'SilvercartProductListProduct');
-Object::add_extension('SilvercartMyAccountHolder_Controller',   'SilvercartProductListMyAccountHolder_Controller');
-
-RequirementsEngine::registerThemedCssFile('SilvercartProductList');
+if (class_exists('RequirementsEngine')) {
+    RequirementsEngine::registerThemedCssFile('SilvercartProductList');
+}
 
 SilvercartProductListAction::add('SilvercartProductListConvertToCartAction');
 SilvercartProductListAction::add('SilvercartProductListDeleteAction');

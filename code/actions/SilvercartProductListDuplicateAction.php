@@ -71,7 +71,7 @@ class SilvercartProductListDuplicateAction extends SilvercartProductListAction i
     public function handleList(SilvercartProductList $list) {
         if ($this->canExecute($list)) {
             $list->duplicate();
-            Director::redirect(Controller::curr()->Link());
+            Controller::curr()->redirect(Controller::curr()->Link());
         }
     }
     

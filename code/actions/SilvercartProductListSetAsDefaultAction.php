@@ -73,7 +73,7 @@ class SilvercartProductListSetAsDefaultAction extends SilvercartProductListActio
         if ($this->canExecute($list)) {
             $list->IsDefault = true;
             $list->write();
-            Director::redirect(Controller::curr()->Link());
+            Controller::curr()->redirect(Controller::curr()->Link());
         }
     }
     

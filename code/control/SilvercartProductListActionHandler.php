@@ -25,8 +25,9 @@ class SilvercartProductListActionHandler extends Controller {
      *
      * @var array
      */
-    public static $allowed_actions = array(
+    private static $allowed_actions = array(
         'addToList',
+        'getLists',
     );
     
     /**
@@ -49,18 +50,27 @@ class SilvercartProductListActionHandler extends Controller {
             $list->MemberID = Member::currentUserID();
             $list->write();
         } else {
-            $list = Member::currentUser()->SilvercartProductLists()->find('ID', $listID);
+            $list = SilvercartCustomer::currentUser()->SilvercartProductLists()->byID($listID);
         }
         
         if ($list instanceof SilvercartProductList) {
-            $product = DataObject::get_by_id('SilvercartProduct', $productID);
+            $product = SilvercartProduct::get()->byID($productID);
             if ($product instanceof SilvercartProduct &&
-                $product->canView(Member::currentUser())) {
+                $product->canView(SilvercartCustomer::currentUser())) {
                 
                 $list->addProduct($product);
             }
         }
-        Director::redirectBack();
+        $this->redirectBack();
+    }
+    
+    public function getLists() {
+        $customer = SilvercartCustomer::currentUser();
+        $map = array(
+                'new' => _t('SilvercartProductList.CreateNewList'),
+        ) + $customer->SilvercartProductLists()->map()->toArray();
+        $json = json_encode($map);
+        return $json;
     }
     
 }

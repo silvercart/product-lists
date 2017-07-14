@@ -1,0 +1,15 @@
+---
+Name: silvercart-product-list-extensions
+---
+Member:
+  extensions:
+    ['SilvercartProductListCustomer']
+SilvercartProduct:
+  extensions:
+    ['SilvercartProductListProduct']
+SilvercartMyAccountHolder_Controller:
+  extensions:
+    ['SilvercartProductListMyAccountHolder_Controller']
+SilvercartPage_Controller:
+  extensions:
+    ['SilvercartProductListPage_ControllerExtension']

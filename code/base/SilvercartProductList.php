@@ -27,7 +27,7 @@ class SilvercartProductList extends DataObject {
      *
      * @var array
      */
-    public static $db = array(
+    private static $db = array(
         'Title'     => 'Varchar(128)',
         'IsDefault' => 'Boolean(0)',
     );
@@ -37,7 +37,7 @@ class SilvercartProductList extends DataObject {
      *
      * @var array
      */
-    public static $has_one = array(
+    private static $has_one = array(
         'Member' => 'Member',
     );
     
@@ -46,7 +46,7 @@ class SilvercartProductList extends DataObject {
      *
      * @var array
      */
-    public static $has_many = array(
+    private static $has_many = array(
         'SilvercartProductListPositions' => 'SilvercartProductListPosition',
     );
     
@@ -55,7 +55,7 @@ class SilvercartProductList extends DataObject {
      *
      * @var array
      */
-    public static $casting = array(
+    private static $casting = array(
         'CreatedNice'       => 'Text',
         'LastEditedNice'    => 'Text',
     );
@@ -95,8 +95,8 @@ class SilvercartProductList extends DataObject {
      * @return string
      */
     public function getLastEditedNice() {
-        $this->SilvercartProductListPositions()->sort('LastEdited');
-        $maxLastEdited  = $this->SilvercartProductListPositions()->pop()->LastEdited;
+        //$maxLastEdited  = $this->SilvercartProductListPositions()->pop()->LastEdited;
+        $maxLastEdited  = $this->SilvercartProductListPositions()->sort('LastEdited')->last();
         $lastEdited     = $this->LastEdited;
         if (strtotime($maxLastEdited) > strtotime($lastEdited)) {
             $lastEdited = $maxLastEdited;
@@ -209,40 +209,38 @@ class SilvercartProductList extends DataObject {
     /**
      * Create a duplicate of this list.
      * 
-     * @param Member $member Member to clone List for
+	 * @param boolean $doWrite Perform a write() operation before returning the object.  If this is 
+     *                         true, it will create the duplicate in the database.
      * 
      * @return DataObject A duplicate of this list
      * 
      * @author Sebastian Diel <sdiel@pixeltricks.de>
      * @since 29.04.2013
      */
-    public function duplicate(Member $member = null) {
-        if (is_null($member)) {
-            $member = $this->Member();
-        }
-        $existingDuplications = DataObject::get(
-                'SilvercartProductList',
-                sprintf(
-                        '"Title" like \'%s (%s %%)\'',
+    public function duplicate($doWrite = true) {
+        $member = $this->Member();
+        $existingDuplications = SilvercartProductList::get()->where(sprintf(
+                        '"SilvercartProductList"."Title" like \'%s (%s %%)\'',
                         $this->Title,
                         _t('SilvercartProductList.DUPLICATION')
-                )
-        );
+        ));
         $duplicationCount = 1;
-        if ($existingDuplications instanceof DataObjectSet) {
+        if ($existingDuplications instanceof SS_List) {
             $duplicationCount = $existingDuplications->Count() + 1;
         }
         
         $clone = new SilvercartProductList();
         $clone->MemberID    = $member->ID;
         $clone->Title       = $this->Title . ' (' . _t('SilvercartProductList.DUPLICATION') . ' ' . $duplicationCount . ')';
-        $clone->write();
-        
-        foreach ($this->SilvercartProductListPositions() as $position) {
-            $clonedPositon = new SilvercartProductListPosition();
-            $clonedPositon->SilvercartProductID     = $position->SilvercartProductID;
-            $clonedPositon->SilvercartProductListID = $clone->ID;
-            $clonedPositon->write();
+        if ($doWrite) {
+            $clone->write();
+            
+            foreach ($this->SilvercartProductListPositions() as $position) {
+                $clonedPositon = new SilvercartProductListPosition();
+                $clonedPositon->SilvercartProductID     = $position->SilvercartProductID;
+                $clonedPositon->SilvercartProductListID = $clone->ID;
+                $clonedPositon->write();
+            }
         }
         
         return $clone;
@@ -344,11 +342,11 @@ class SilvercartProductList extends DataObject {
     /**
      * Returns the actions for the current list
      * 
-     * @return DataObjectSet
+     * @return ArrayList
      */
     public function getListActions() {
         $registered_actions = SilvercartProductListAction::get_registered_actions();
-        $actions            = new DataObjectSet();
+        $actions            = new ArrayList();
         foreach ($registered_actions as $action) {
             $actionObject = new $action();
             if ($actionObject->canView($this) &&
@@ -364,7 +362,7 @@ class SilvercartProductList extends DataObject {
      * 
      * @param Member $member Member to get lists for
      * 
-     * @return DataObjectSet
+     * @return DataList
      */
     public static function get_by_member($member) {
         return $member->SilvercartProductLists();

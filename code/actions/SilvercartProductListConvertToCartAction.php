@@ -23,14 +23,18 @@ class SilvercartProductListConvertToCartAction extends SilvercartProductListActi
     /**
      * Returns whether the given member can execute this action.
      * 
-     * @param Member $member Member to check permission for
+     * @param SilvercartProductList $list   List to check permission for
+     * @param Member                $member Member to check permission for
      * 
      * @return void
      *
      * @author Sebastian Diel <sdiel@pixeltricks.de>
      * @since 26.04.2013
      */
-    public function canExecute(Member $member) {
+    public function canExecute(SilvercartProductList $list, Member $member = null) {
+        if (is_null($member)) {
+            $member = SilvercartCustomer::currentUser();
+        }
         $canExecute = false;
         if ($member->isRegisteredCustomer()) {
             $canExecute = true;
@@ -41,15 +45,16 @@ class SilvercartProductListConvertToCartAction extends SilvercartProductListActi
     /**
      * Returns whether the given member can view this action.
      * 
-     * @param Member $member Member to check permission for
+     * @param SilvercartProductList $list   List to check permission for
+     * @param Member                $member Member to check permission for
      * 
      * @return void
      *
      * @author Sebastian Diel <sdiel@pixeltricks.de>
      * @since 26.04.2013
      */
-    public function canView(Member $member) {
-        return $this->canExecute($member);
+    public function canView(SilvercartProductList $list, Member $member = null) {
+        return $this->canExecute($list, $member);
     }
     
     /**
@@ -65,7 +70,7 @@ class SilvercartProductListConvertToCartAction extends SilvercartProductListActi
     public function handleList(SilvercartProductList $list) {
         if ($this->canExecute($list)) {
             $list->convertToCart();
-            Director::redirect(Controller::curr()->Link());
+            Controller::curr()->redirect(Controller::curr()->Link());
         }
     }
     

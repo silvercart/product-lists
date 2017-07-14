@@ -18,22 +18,22 @@
  * @since 24.04.2013
  * @license see license file in modules base directory
  */
-class SilvercartProductListProduct extends DataObjectDecorator {
+class SilvercartProductListProduct extends DataExtension {
     
     /**
      * Returns the lists of the current member.
      * 
-     * @return DataObjectSet
+     * @return SS_List
      *
      * @author Sebastian Diel <sdiel@pixeltricks.de>
-     * @since 24.04.2013
+     * @since 13.07.2017
      */
     public function SilvercartProductLists() {
         if (Member::currentUserID()) {
             SilvercartProductList::set_product_context($this->owner);
             $lists = SilvercartProductList::get_by_member(Member::currentUser());
         } else {
-            $lists = new DataObjectSet();
+            $lists = new ArrayList();
         }
         return $lists;
     }

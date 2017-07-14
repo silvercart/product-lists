@@ -26,7 +26,7 @@ class SilvercartProductListPosition extends DataObject {
      *
      * @var array
      */
-    public static $has_one = array(
+    private static $has_one = array(
         'SilvercartProductList' => 'SilvercartProductList',
         'SilvercartProduct'     => 'SilvercartProduct',
     );

@@ -71,7 +71,7 @@ class SilvercartProductListDeleteAction extends SilvercartProductListAction impl
     public function handleList(SilvercartProductList $list) {
         if ($this->canExecute($list)) {
             $list->delete();
-            Director::redirect(Controller::curr()->Link());
+            Controller::curr()->redirect(Controller::curr()->Link());
         }
     }
     

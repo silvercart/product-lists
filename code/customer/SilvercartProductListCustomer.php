@@ -18,30 +18,23 @@
  * @since 24.04.2013
  * @license see license file in modules base directory
  */
-class SilvercartProductListCustomer extends DataObjectDecorator {
+class SilvercartProductListCustomer extends DataExtension {
     
+    /**
+     * Has many relations
+     *
+     * @var array
+     */
+    private static $has_many = array(
+        'SilvercartProductLists' => 'SilvercartProductList',
+    );
+
     /**
      * Indicator whether updateCMSFields is already called
      *
      * @var bool
      */
     protected $updateCMSFieldsIsCalled = false;
-    
-    /**
-     * Extra static attributes
-     * 
-     * @return array
-     *
-     * @author Sebastian Diel <sdiel@pixeltricks.de>
-     * @since 24.04.2013
-     */
-    public function extraStatics() {
-        return array(
-            'has_many' => array(
-                'SilvercartProductLists' => 'SilvercartProductList',
-            ),
-        );
-    }
     
     /**
      * Updates the field labels
@@ -65,14 +58,14 @@ class SilvercartProductListCustomer extends DataObjectDecorator {
     /**
      * Updates the CMS fields
      * 
-     * @param FieldSet &$fields CMS fields to update
+     * @param FieldList &$fields CMS fields to update
      * 
      * @return void
      *
      * @author Sebastian Diel <sdiel@pixeltricks.de>
      * @since 10.12.2012
      */
-    public function updateCMSFields(FieldSet &$fields) {
+    public function updateCMSFields(FieldList $fields) {
         if (!$this->updateCMSFieldsIsCalled) {
             $this->updateCMSFieldsIsCalled = true;
         }

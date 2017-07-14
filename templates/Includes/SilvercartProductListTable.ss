@@ -1,5 +1,5 @@
 <% if SilvercartProductLists %>
-<table class="silvercart-table full silvercart-product-list-table">
+<table class="table table-striped silvercart-product-list-table">
     <thead>
         <tr>
             <th>&nbsp;</th>
@@ -20,18 +20,10 @@
             <td class="right"><a href="{$Link}">{$CreatedNice}</a></td>
             <td class="right"><a href="{$Link}">{$LastEditedNice}</a></td>
             <td class="right">
-                <div class="silvercart-button-small edit">
-                    <div class="silvercart-button-small_content">
-                        <a href="{$Link}" title="<% _t('SilvercartProductList.SHOW_DETAILS') %>"><span><% _t('SilvercartProductList.SHOW_DETAILS_SHORT') %></span></a>
-                    </div>
-                </div>
+                <a class="btn btn-small" href="{$Link}" title="<% _t('SilvercartProductList.SHOW_DETAILS') %>"><span><% _t('SilvercartProductList.SHOW_DETAILS_SHORT') %></span></a>
             <% if ListActions %>
                 <% control ListActions %>
-                <div class="silvercart-button-small {$LowerActionName}">
-                    <div class="silvercart-button-small_content">
-                        <a href="{$Link}{$ActionName}/{$CurrentPage.CurrentList.ID}" title="{$ButtonTitle}"><span>{$ButtonTitleShort}</span></a>
-                    </div>
-                </div>
+                    <a class="btn btn-small {$LowerActionName}" href="{$Link}{$ActionName}/{$CurrentPage.CurrentList.ID}" title="{$ButtonTitle}"><span>{$ButtonTitleShort}</span></a>
                 <% end_control %>
             <% end_if %>
             </td>
@@ -40,5 +32,5 @@
     </tbody>
 </table>
 <% else %>
-    <h3><% _t('NO_LIST_AVAILABLE') %></h3>
+    <div class="alert alert-info"><% _t('NO_LIST_AVAILABLE') %></div>
 <% end_if %>
