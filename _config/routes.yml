@@ -1,6 +1,6 @@
 ---
 Name: silvercart_product_lists_routes
 ---
-Director:
+SilverStripe\Control\Director:
   rules:
-    'silvercart-product-list//$Action/$ID/$OtherID': 'SilvercartProductListActionHandler'
+    'silvercart-product-list//$Action/$ID/$OtherID': 'SilverCart\ProductLists\Control\ActionHandler'

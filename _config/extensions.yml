@@ -1,15 +1,18 @@
 ---
 Name: silvercart-product-list-extensions
 ---
-Member:
+SilverStripe\Security\Member:
   extensions:
-    ['SilvercartProductListCustomer']
-SilvercartProduct:
+    - SilverCart\ProductLists\Extensions\Security\MemberExtension
+SilverCart\Model\Product\Product:
   extensions:
-    ['SilvercartProductListProduct']
-SilvercartMyAccountHolder_Controller:
+    - SilverCart\ProductLists\Extensions\Product\ProductExtension
+SilverCart\Model\Pages\MyAccountHolderController:
   extensions:
-    ['SilvercartProductListMyAccountHolder_Controller']
-SilvercartPage_Controller:
+    - SilverCart\ProductLists\Extensions\Pages\MyAccountHolderControllerExtension
+SilverCart\Model\Pages\PageController:
   extensions:
-    ['SilvercartProductListPage_ControllerExtension']
+    - SilverCart\ProductLists\Extensions\Pages\PageControllerExtension
+SilverCart\Forms\AddToCartForm:
+  extensions:
+    - SilverCart\ProductLists\Extensions\Forms\AddToCartFormExtension

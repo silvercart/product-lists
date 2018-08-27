@@ -1,19 +1,14 @@
 <?php
-/**
- * Copyright 2013 pixeltricks GmbH
- *
- * This file is part of SilvercartProductList.
- *
- * @package SilvercartProductList
- * @subpackage Config
- * @ignore
- */
 
-if (class_exists('RequirementsEngine')) {
-    RequirementsEngine::registerThemedCssFile('SilvercartProductList');
-}
+use SilverCart\ProductLists\Control\Actions\{
+    ProductListAction,
+    ProductListConvertToCartAction,
+    ProductListDeleteAction,
+    ProductListDuplicateAction,
+    ProductListSetAsDefaultAction
+};
 
-SilvercartProductListAction::add('SilvercartProductListConvertToCartAction');
-SilvercartProductListAction::add('SilvercartProductListDeleteAction');
-SilvercartProductListAction::add('SilvercartProductListDuplicateAction');
-SilvercartProductListAction::add('SilvercartProductListSetAsDefaultAction');
+ProductListAction::add(ProductListConvertToCartAction::class);
+ProductListAction::add(ProductListDeleteAction::class);
+ProductListAction::add(ProductListDuplicateAction::class);
+ProductListAction::add(ProductListSetAsDefaultAction::class);

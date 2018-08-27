@@ -1,0 +1,1 @@
+<% include SilverCart/ProductLists/Model/Pages/ProductListTable %>
