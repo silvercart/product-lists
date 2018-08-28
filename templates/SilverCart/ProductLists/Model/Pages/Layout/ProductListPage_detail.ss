@@ -41,9 +41,9 @@
                 <tfoot>
                 <td colspan="5">
                     <% if $CurrentPage.showPricesGross %>
-                    <small><%t SilverCart.PricesIncludeVat 'All prices incl. VAT' %></small>
+                    <small><%t SilverCart\Model\Pages\Page.AllPricesInclVat 'All prices incl. VAT' %></small>
                     <% else_if $CurrentPage.showPricesNet %>
-                    <small><%t SilverCart.PricesExcludeVat 'All prices excl. VAT' %></small>
+                    <small><%t SilverCart\Model\Pages\Page.AllPricesExclVat 'All prices excl. VAT' %></small>
                     <% end_if %>
                 </td>
                 </tfoot>
