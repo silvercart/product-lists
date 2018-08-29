@@ -1,5 +1,5 @@
 <% if $ProductLists %>
-<table class="table table-striped silvercart-product-list-table">
+<table class="table table-striped responsive-table">
     <thead>
         <tr>
             <th><%t SilverCart\ProductLists\Model\Pages\Includes\ProductListTable.COL_NAME 'Name' %></th>
@@ -13,10 +13,10 @@
     <% loop $ProductLists %>
         {$setAsCurrentList}
         <tr>
-            <td><a href="{$Link}"><% if $IsDefault %><span class="fa fa-star"></span> <% end_if %>{$Title}</a></td>
-            <td class="text-right"><a href="{$Link}">{$ProductListPositions.count}</a></td>
-            <td class="text-right"><a href="{$Link}">{$CreatedNice}</a></td>
-            <td class="text-right"><a href="{$Link}">{$LastEditedNice}</a></td>
+            <td class="text-right text-sm-left" data-title="<%t SilverCart\ProductLists\Model\Pages\Includes\ProductListTable.COL_NAME 'Name' %>"><a href="{$Link}"><% if $IsDefault %><span class="fa fa-star"></span> <% end_if %>{$Title}</a></td>
+            <td class="text-right" data-title="<%t SilverCart\ProductLists\Model\Pages\Includes\ProductListTable.COL_COUNT 'Product count' %>"><a href="{$Link}">{$ProductListPositions.count}</a></td>
+            <td class="text-right" data-title="<%t SilverCart\ProductLists\Model\Pages\Includes\ProductListTable.COL_CREATED 'Created' %>"><a href="{$Link}">{$CreatedNice}</a></td>
+            <td class="text-right" data-title="<%t SilverCart\ProductLists\Model\Pages\Includes\ProductListTable.COL_LASTEDITED 'Last update' %>"><a href="{$Link}">{$LastEditedNice}</a></td>
             <td class="text-right">
                 <div class="btn-group">
                     <a class="btn btn-outline-primary btn-sm" href="{$Link}" title="<%t SilverCart\ProductLists\Model\Product\ProductList.SHOW_DETAILS 'Show details' %>" data-toggle="tooltip"><span class="fa fa-search"></span><span class="sr-only"><%t SilverCart\ProductLists\Model\ProductList.SHOW_DETAILS_SHORT 'Details' %></span></a>

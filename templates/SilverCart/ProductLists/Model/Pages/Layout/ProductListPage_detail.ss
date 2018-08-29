@@ -23,7 +23,7 @@
                 <% end_loop %>
             </div>
                 <% if $ProductListPositions %>
-            <table class="table">
+            <table class="table responsive-table">
                 <thead>
                     <tr>
                         <th>&nbsp;</th>
