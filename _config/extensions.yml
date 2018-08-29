@@ -10,6 +10,9 @@ SilverCart\Model\Product\Product:
 SilverCart\Model\Pages\MyAccountHolderController:
   extensions:
     - SilverCart\ProductLists\Extensions\Pages\MyAccountHolderControllerExtension
+SilverCart\Model\Pages\Page:
+  extensions:
+    - SilverCart\ProductLists\Extensions\Pages\PageExtension
 SilverCart\Model\Pages\PageController:
   extensions:
     - SilverCart\ProductLists\Extensions\Pages\PageControllerExtension
