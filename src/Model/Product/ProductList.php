@@ -371,6 +371,8 @@ class ProductList extends DataObject
             $position->ProductID     = $product->ID;
             $position->ProductListID = $this->ID;
             $position->write();
+            $this->extend('onAfterAddToList', $product);
+            $product->extend('onAfterAddToList', $position);
         }
     }
     
