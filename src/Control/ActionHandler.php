@@ -5,6 +5,7 @@ namespace SilverCart\ProductLists\Control;
 use SilverCart\Dev\Tools;
 use SilverCart\Model\Customer\Customer;
 use SilverCart\Model\Pages\MyAccountHolder;
+use SilverCart\Model\Order\ShoppingCart;
 use SilverCart\Model\Product\Product;
 use SilverCart\ProductLists\Model\Product\ProductList;
 use SilverStripe\Control\Controller;
@@ -30,11 +31,12 @@ class ActionHandler extends Controller
      */
     private static $allowed_actions = [
         'addToList',
+        'addToListAndRemoveFromCart',
         'getLists',
     ];
     
     /**
-     * Action to add a product to cart.
+     * Action to add a product to a list.
      * 
      * @param HTTPRequest $request Request to check for product data
      * 
@@ -79,6 +81,27 @@ class ActionHandler extends Controller
             MyAccountHolder::add_info_message($list->fieldLabel('AccountRequiredInfo'));
             $this->redirect(Tools::PageByIdentifierCode('SilvercartMyAccountHolder')->Link());
         }
+    }
+    
+    /*
+     * Action to remove a product from cart and add it to a list.
+     * 
+     * @param HTTPRequest $request Request to check for product data
+     * 
+     * @return void
+     *
+     * @author Sebastian Diel <sdiel@pixeltricks.de>
+     * @since 08.10.2018
+     */
+    public function addToListAndRemoveFromCart(HTTPRequest $request)
+    {
+        $customer = Customer::currentUser();
+        if ($customer instanceof Member
+         && $customer->isRegisteredCustomer()
+        ) {
+            ShoppingCart::removeProduct(['productID' => $request->param('ID')]);
+        }
+        $this->addToList($request);
     }
     
     /**

@@ -334,9 +334,13 @@ class ProductList extends DataObject
      * @author Sebastian Diel <sdiel@pixeltricks.de>
      * @since 24.08.2018
      */
-    public function AddProductLink($productID)
+    public function AddProductLink($productID, $removeFromShoppingCart = false)
     {
-        return Director::makeRelative("silvercart-product-list/addToList/{$productID}/{$this->ID}");
+        $action = "addToList";
+        if ($removeFromShoppingCart) {
+            $action = "addToListAndRemoveFromCart";
+        }
+        return Director::makeRelative("silvercart-product-list/{$action}/{$productID}/{$this->ID}");
     }
     
     /**

@@ -4,6 +4,7 @@ de:
         AccountRequiredInfo: 'Sie müssen angemeldet sein, um eine Merkliste zu verwenden. Nach dem Login oder der Registrierung wird der gewählte Artikel automatisch zu Ihrer Merkliste hinzugefügt.'
         AddThisProduct: 'Diesen Artikel auf einer Liste merken'
         AddToList: 'Auf die Liste'
+        RememberForLater: 'für später merken'
         My: 'Meine'
         PLURALNAME: 'Merklisten'
         SINGULARNAME: 'Merkliste'

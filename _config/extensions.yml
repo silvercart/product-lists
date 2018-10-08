@@ -19,3 +19,6 @@ SilverCart\Model\Pages\PageController:
 SilverCart\Forms\AddToCartForm:
   extensions:
     - SilverCart\ProductLists\Extensions\Forms\AddToCartFormExtension
+SilverCart\Forms\RemovePositionForm:
+  extensions:
+    - SilverCart\ProductLists\Extensions\Forms\RemovePositionFormExtension

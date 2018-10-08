@@ -46,9 +46,13 @@ class ProductExtension extends DataExtension
      * @author Sebastian Diel <sdiel@pixeltricks.de>
      * @since 24.08.2018
      */
-    public function AddToNewListLink()
+    public function AddToNewListLink($removeFromShoppingCart = false)
     {
-        return Director::makeRelative("silvercart-product-list/addToList/{$this->owner->ID}/new");
+        $action = "addToList";
+        if ($removeFromShoppingCart) {
+            $action = "addToListAndRemoveFromCart";
+        }
+        return Director::makeRelative("silvercart-product-list/{$action}/{$this->owner->ID}/new");
     }
 
     /**
@@ -59,13 +63,17 @@ class ProductExtension extends DataExtension
      * @author Sebastian Diel <sdiel@pixeltricks.de>
      * @since 24.08.2018
      */
-    public function AddToDefaultListLink()
+    public function AddToDefaultListLink($removeFromShoppingCart = false)
     {
         $linkID = 'new';
         $defaultList = ProductList::default_list();
         if ($defaultList instanceof ProductList) {
             $linkID = $defaultList->ID;
         }
-        return Director::makeRelative("silvercart-product-list/addToList/{$this->owner->ID}/$linkID");
+        $action = "addToList";
+        if ($removeFromShoppingCart) {
+            $action = "addToListAndRemoveFromCart";
+        }
+        return Director::makeRelative("silvercart-product-list/{$action}/{$this->owner->ID}/{$linkID}");
     }
 }

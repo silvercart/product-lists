@@ -4,6 +4,7 @@ en:
         AccountRequiredInfo: 'To add products to a list, you have to login or register an account. After you are logged in, the product you picked will be automatically added to your list.'
         AddThisProduct: 'Add this product to a list'
         AddToList: 'Add to List'
+        RememberForLater: 'remember for later'
         My: 'My'
         PLURALNAME: 'Lists'
         SINGULARNAME: 'List'
