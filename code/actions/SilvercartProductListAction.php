@@ -18,8 +18,14 @@
  * @since 01.03.2013
  * @license see license file in modules base directory
  */
-class SilvercartProductListAction extends Controller {
-    
+class SilvercartProductListAction extends Controller
+{
+    /**
+     * font awesome icon of the action
+     *
+     * @var string
+     */
+    private static $font_awesome_icon = null;
     /**
      * Button title of the action
      *
@@ -116,6 +122,16 @@ class SilvercartProductListAction extends Controller {
             $this->title = _t($this->class . '.TITLE', $this->class);
         }
         return $this->title;
+    }
+
+    /**
+     * Returns the font awesome icon.
+     * 
+     * @return string
+     */
+    public function getFontAwesomeIcon()
+    {
+        return $this->config()->get('font_awesome_icon');
     }
 
     /**

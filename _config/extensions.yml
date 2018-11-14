@@ -13,3 +13,9 @@ SilvercartMyAccountHolder_Controller:
 SilvercartPage_Controller:
   extensions:
     ['SilvercartProductListPage_ControllerExtension']
+SilvercartProductAddCartFormDetail:
+  extensions:
+    - SilverCart\ProductLists\Extensions\Forms\AddToCartFormExtension
+SilvercartRemovePositionForm:
+  extensions:
+    - SilverCart\ProductLists\Extensions\Forms\RemovePositionFormExtension

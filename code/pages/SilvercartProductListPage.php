@@ -115,6 +115,7 @@ class SilvercartProductListPage_Controller extends SilvercartMyAccountHolder_Con
         'detail',
         'update',
         'execute',
+        'removeitem',
     );
     
     /**
@@ -202,6 +203,35 @@ class SilvercartProductListPage_Controller extends SilvercartMyAccountHolder_Con
         $actionHandler = new $action();
         $actionHandler->handleList($list);
         $this->redirect($this->Link('detail') . '/' . $listID);
+    }
+
+    /**
+     * Action to delete a lists position.
+     * 
+     * @param SS_HTTPRequest $request Request to handle
+     * 
+     * @return void
+     *
+     * @author Sebastian Diel <sdiel@pixeltricks.de>
+     * @since 24.08.2018
+     */
+    public function removeitem(SS_HTTPRequest $request)
+    {
+        $params = $request->allParams();
+        $listID = (int) $params['ID'];
+        $itemID = (int) $params['OtherID'];
+        $list   = SilvercartProductList::get()->byID($listID);
+        $item   = SilvercartProductListPosition::get()->byID($itemID);
+        $member = SilvercartCustomer::currentUser();
+        if ($member instanceof Member
+         && $list instanceof SilvercartProductList
+         && $list->MemberID == $member->ID
+         && $item instanceof SilvercartProductListPosition
+         && $item->SilvercartProductListID == $list->ID
+        ) {
+            $item->delete();
+        }
+        $this->redirectBack();
     }
 
     /**

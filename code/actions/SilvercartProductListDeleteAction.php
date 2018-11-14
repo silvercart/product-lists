@@ -18,7 +18,14 @@
  * @since 01.03.2013
  * @license see license file in modules base directory
  */
-class SilvercartProductListDeleteAction extends SilvercartProductListAction implements SilvercartProductListActionInterface {
+class SilvercartProductListDeleteAction extends SilvercartProductListAction implements SilvercartProductListActionInterface
+{
+    /**
+     * font awesome icon of the action
+     *
+     * @var string
+     */
+    private static $font_awesome_icon = 'trash';
     
     /**
      * Returns whether the given member can execute this action.

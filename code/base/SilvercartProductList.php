@@ -281,6 +281,25 @@ class SilvercartProductList extends DataObject {
     public function Link($action = 'detail') {
         return SilvercartTools::PageByIdentifierCode('SilvercartProductListPage')->Link($action) . '/' . $this->ID;
     }
+
+    /**
+     * Returns the link to add a product to the list.
+     * 
+     * @param int $productID ID of the product to add
+     * 
+     * @return string
+     * 
+     * @author Sebastian Diel <sdiel@pixeltricks.de>
+     * @since 24.08.2018
+     */
+    public function AddProductLink($productID, $removeFromShoppingCart = false)
+    {
+        $action = "addToList";
+        if ($removeFromShoppingCart) {
+            $action = "addToListAndRemoveFromCart";
+        }
+        return Director::makeRelative("silvercart-product-list/{$action}/{$productID}/{$this->ID}");
+    }
     
     /**
      * Returns the list as an array of product numbers.

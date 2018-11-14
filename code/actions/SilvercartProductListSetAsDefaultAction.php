@@ -18,7 +18,14 @@
  * @since 01.03.2013
  * @license see license file in modules base directory
  */
-class SilvercartProductListSetAsDefaultAction extends SilvercartProductListAction implements SilvercartProductListActionInterface {
+class SilvercartProductListSetAsDefaultAction extends SilvercartProductListAction implements SilvercartProductListActionInterface
+{
+    /**
+     * font awesome icon of the action
+     *
+     * @var string
+     */
+    private static $font_awesome_icon = 'star';
     
     /**
      * Returns whether the given member can execute this action.

@@ -18,8 +18,8 @@
  * @since 24.04.2013
  * @license see license file in modules base directory
  */
-class SilvercartProductListProduct extends DataExtension {
-    
+class SilvercartProductListProduct extends DataExtension
+{
     /**
      * Returns the lists of the current member.
      * 
@@ -28,14 +28,53 @@ class SilvercartProductListProduct extends DataExtension {
      * @author Sebastian Diel <sdiel@pixeltricks.de>
      * @since 13.07.2017
      */
-    public function SilvercartProductLists() {
+    public function SilvercartProductLists()
+    {
         if (Member::currentUserID()) {
             SilvercartProductList::set_product_context($this->owner);
             $lists = SilvercartProductList::get_by_member(Member::currentUser());
         } else {
-            $lists = new ArrayList();
+            $lists = ArrayList::create();
         }
         return $lists;
     }
     
+    /**
+     * Returns the link to add this product to a new list.
+     * 
+     * @param bool $removeFromShoppingCart Remove from shopping cart before adding to list?
+     * 
+     * @return string
+     */
+    public function AddToNewListLink($removeFromShoppingCart = false)
+    {
+        $action = "addToList";
+        if ($removeFromShoppingCart) {
+            $action = "addToListAndRemoveFromCart";
+        }
+        return Director::makeRelative("silvercart-product-list/{$action}/{$this->owner->ID}/new");
+    }
+    
+    /**
+     * Returns the link to add this product to the default list.
+     * 
+     * @param bool $removeFromShoppingCart Remove from shopping cart before adding to list?
+     * 
+     * @return string
+     */
+    public function AddToDefaultListLink($removeFromShoppingCart = false)
+    {
+        $action = "addToList";
+        if ($removeFromShoppingCart) {
+            $action = "addToListAndRemoveFromCart";
+        }
+        $defaultListID = 'new';
+        $defaultList   = SilvercartProductList::default_list();
+        if ($defaultList instanceof SilvercartProductList
+         && $defaultList->exists())
+        {
+            $defaultListID = $defaultList->ID;
+        }
+        return Director::makeRelative("silvercart-product-list/{$action}/{$this->owner->ID}/{$defaultListID}");
+    }
 }

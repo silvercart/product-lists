@@ -19,8 +19,8 @@
  * @since 01.03.2013
  * @license see license file in modules base directory
  */
-class SilvercartProductListPosition extends DataObject {
-    
+class SilvercartProductListPosition extends DataObject
+{
     /**
      * Has one relations
      *
@@ -98,5 +98,30 @@ class SilvercartProductListPosition extends DataObject {
         
         return $summaryFields;
     }
-    
+
+    /**
+     * Returns the link to remove this position from the list.
+     * 
+     * @return string
+     * 
+     * @author Sebastian Diel <sdiel@pixeltricks.de>
+     * @since 24.08.2018
+     */
+    public function RemoveLink()
+    {
+        return SilvercartTools::PageByIdentifierCode('SilvercartProductListPage')->Link('removeitem') . '/' . $this->SilvercartProductListID . '/' . $this->ID;
+    }
+
+    /**
+     * Returns the link to add this position to the cart.
+     * 
+     * @return string
+     * 
+     * @author Sebastian Diel <sdiel@pixeltricks.de>
+     * @since 24.08.2018
+     */
+    public function AddToCartLink()
+    {
+        return Director::makeRelative('customhtmlformaction/addToCart') . '/' . $this->SilvercartProductID . '/1';
+    }
 }

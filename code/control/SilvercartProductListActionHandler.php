@@ -27,6 +27,7 @@ class SilvercartProductListActionHandler extends Controller {
      */
     private static $allowed_actions = array(
         'addToList',
+        'addToListAndRemoveFromCart',
         'getLists',
     );
     
@@ -69,6 +70,27 @@ class SilvercartProductListActionHandler extends Controller {
         } else {
             $this->redirect(SilvercartTools::PageByIdentifierCode('SilvercartMyAccountHolder')->Link());
         }
+    }
+    
+    /*
+     * Action to remove a product from cart and add it to a list.
+     * 
+     * @param SS_HTTPRequest $request Request to check for product data
+     * 
+     * @return void
+     *
+     * @author Sebastian Diel <sdiel@pixeltricks.de>
+     * @since 08.10.2018
+     */
+    public function addToListAndRemoveFromCart(SS_HTTPRequest $request)
+    {
+        $customer = SilvercartCustomer::currentUser();
+        if ($customer instanceof Member
+         && $customer->isRegisteredCustomer()
+        ) {
+            SilvercartShoppingCart::removeProduct(['productID' => $request->param('ID')]);
+        }
+        $this->addToList($request);
     }
     
     /**
