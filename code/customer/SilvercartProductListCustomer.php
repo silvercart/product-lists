@@ -72,4 +72,13 @@ class SilvercartProductListCustomer extends DataExtension {
         
     }
     
+    /**
+     * Returns the customers default list.
+     * 
+     * @return SilvercartProductList
+     */
+    public function getDefaultList()
+    {
+        return $this->owner->SilvercartProductLists()->filter('IsDefault', true)->first();
+    }
 }
