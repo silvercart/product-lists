@@ -48,6 +48,7 @@ class SilvercartProductListSetAsDefaultAction extends SilvercartProductListActio
             $list->MemberID == $member->ID) {
             $canExecute = true;
         }
+        $this->extend('updateCanExecute', $canExecute);
         return $canExecute;
     }
     

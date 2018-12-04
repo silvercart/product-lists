@@ -16,6 +16,7 @@ de:
         SHOW_DETAILS: 'Details anzeigen'
         SHOW_DETAILS_SHORT: 'Details'
         ShowLists: 'Listen anzeigen'
+        ThisListIsEmpty: 'Diese Liste ist leer.'
         ISDEFAULT: 'Als Standard verwenden'
         TITLE: 'Name'
         TITLE_DEFAULT: 'Liste vom %s Uhr'

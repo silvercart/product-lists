@@ -47,6 +47,7 @@ class SilvercartProductListDeleteAction extends SilvercartProductListAction impl
             $list->MemberID == $member->ID) {
             $canExecute = true;
         }
+        $this->extend('updateCanExecute', $canExecute);
         return $canExecute;
     }
     

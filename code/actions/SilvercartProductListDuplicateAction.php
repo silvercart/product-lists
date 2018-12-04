@@ -47,6 +47,7 @@ class SilvercartProductListDuplicateAction extends SilvercartProductListAction i
             $list->MemberID == $member->ID) {
             $canExecute = true;
         }
+        $this->extend('updateCanExecute', $canExecute);
         return $canExecute;
     }
     

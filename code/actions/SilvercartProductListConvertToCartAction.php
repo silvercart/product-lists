@@ -46,6 +46,7 @@ class SilvercartProductListConvertToCartAction extends SilvercartProductListActi
         if ($member->isRegisteredCustomer()) {
             $canExecute = true;
         }
+        $this->extend('updateCanExecute', $canExecute);
         return $canExecute;
     }
     
