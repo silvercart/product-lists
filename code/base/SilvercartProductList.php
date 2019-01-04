@@ -319,19 +319,40 @@ class SilvercartProductList extends DataObject {
      * 
      * @param SilvercartProduct $product Product to add
      * 
-     * @return void
+     * @return $this
      *
      * @author Sebastian Diel <sdiel@pixeltricks.de>
      * @since 30.04.2013
      */
-    public function addProduct($product) {
+    public function addProduct(SilvercartProduct $product)
+    {
         $existingPosition = $this->SilvercartProductListPositions()->find('SilvercartProductID', $product->ID);
         if (!($existingPosition instanceof SilvercartProductListPosition)) {
-            $position = new SilvercartProductListPosition();
+            $position = SilvercartProductListPosition::create();
             $position->SilvercartProductID      = $product->ID;
             $position->SilvercartProductListID  = $this->ID;
             $position->write();
         }
+        return $this;
+    }
+    
+    /**
+     * Removes the given product from the list.
+     * 
+     * @param SilvercartProduct $product Product
+     * 
+     * @return $this
+     * 
+     * @author Sebastian Diel <sdiel@pixeltricks.de>
+     * @since 04.01.2019
+     */
+    public function removeProduct(SilvercartProduct $product)
+    {
+        $existingPosition = $this->SilvercartProductListPositions()->find('SilvercartProductID', $product->ID);
+        if ($existingPosition instanceof SilvercartProductListPosition) {
+            $this->SilvercartProductListPositions()->remove($existingPosition);
+        }
+        return $this;
     }
     
     /**
