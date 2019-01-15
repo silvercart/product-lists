@@ -124,4 +124,17 @@ class SilvercartProductListPosition extends DataObject
     {
         return Director::makeRelative('customhtmlformaction/addToCart') . '/' . $this->SilvercartProductID . '/1';
     }
+
+    /**
+     * Returns the link to add this position to the cart.
+     * 
+     * @return string
+     * 
+     * @author Sebastian Diel <sdiel@pixeltricks.de>
+     * @since 24.08.2018
+     */
+    public function AddToCartAndRemoveFromListLink()
+    {
+        return Director::makeRelative("silvercart-product-list/addToCartAndRemoveFromList/{$this->SilvercartProductID}/{$this->SilvercartProductListID}");
+    }
 }
