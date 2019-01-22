@@ -1,4 +1,7 @@
 de:
+    SilverCart:
+        GoToList: "Zur Merkliste"
+        ProductAddedToList: "Der Artikel wurde zur Merkliste \"{list}\" hinzugefügt."
     SilvercartProductList:
         AccountRequired: 'Sie müssen angemeldet sein, um eine Merkliste zu verwenden. Zur Anmeldung?'
         AddThisProduct: 'Diesen Artikel zu einer Liste hinzufügen'

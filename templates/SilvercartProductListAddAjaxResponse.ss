@@ -3,7 +3,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title"><span class="text-success fa fa-check"></span> <%t Silvercart.ProductAddedToList 'The product was added to your list "{list}".' list=$List.Title %></h4> 
+                <h4 class="modal-title"><span class="text-success fa fa-check"></span> <%t SilverCart.ProductAddedToList 'The product was added to your list "{list}".' list=$List.Title %></h4> 
             </div>
             <div class="modal-body">
             <% with $Product %>
@@ -26,7 +26,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-gray float-left pull-left" data-dismiss="modal"><%t SilvercartPage.CONTINUESHOPPING 'Continue shopping' %> <span class="fa fa-angle-double-right"></span></button>
-                <a class="btn btn-primary" href="{$List.Link}"><%t Silvercart.GoToList 'Go to list' %> <span class="fa fa-angle-double-right"></span></a>
+                <a class="btn btn-primary" href="{$List.Link}"><%t SilverCart.GoToList 'Go to list' %> <span class="fa fa-angle-double-right"></span></a>
             </div>
         </div>
     </div>
