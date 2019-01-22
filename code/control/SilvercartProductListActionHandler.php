@@ -48,16 +48,39 @@ class SilvercartProductListActionHandler extends Controller
         if ($customer instanceof Member
          && $customer->isRegisteredCustomer()
         ) {
-            $list = $this->getListByRequest($request, $customer);
+            $productID = 0;
+            $isAjax    = $request->postVar('isAjax');
+            $list      = $this->getListByRequest($request, $customer);
             if ($list instanceof SilvercartProductList) {
                 $product = SilvercartProduct::get()->byID($request->param('ID'));
                 if ($product instanceof SilvercartProduct
                  && $product->canView($customer)
                 ) {
+                    $productID = $product->ID;
                     $list->addProduct($product);
                 }
             }
-            $this->redirectBack();
+            
+            if ($isAjax) {
+                $product       = SilvercartProduct::get()->byID($productID);
+                $modalSelector = '';
+                $modalHTML     = '';
+                if ($product instanceof SilvercartProduct) {
+                    $modalSelector = "#cart-modal-{$list->ID}-{$product->ID}";
+                    $modalHTML     = (string) $this->owner->renderWith('SilvercartProductListAddAjaxResponse', [
+                        'Product' => $product,
+                        'List'    => $list,
+                    ]);
+                }
+                $json = [
+                    'ModalHTML'     => $modalHTML,
+                    'ModalSelector' => $modalSelector,
+                ];
+                print json_encode($json);
+                exit();
+            } else {
+                $this->redirectBack();
+            }
         } else {
             $this->redirect(SilvercartTools::PageByIdentifierCode('SilvercartMyAccountHolder')->Link());
         }
