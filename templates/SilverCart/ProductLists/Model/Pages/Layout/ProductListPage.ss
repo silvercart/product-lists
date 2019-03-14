@@ -5,7 +5,17 @@
         <article>
             <header><h1>{$Title}</h1></header>
             {$Content}
+        <% if $CurrentMember.AllowMultipleProductLists %>
             <% include SilverCart/ProductLists/Model/Pages/ProductListTable %>
+        <% else %>
+            <% if $DefaultList %>
+                <% with $DefaultList %>
+                    <% include SilverCart/ProductLists/Model/Pages/ProductListDetail %>
+                <% end_with %>
+            <% else %>
+                <div class="alert alert-info"><%t SilverCart\ProductLists\Model\Product\ProductList.ThisListIsEmpty 'This list is empty.' %></div>
+            <% end_if %>
+        <% end_if %>
         <% if $Form %>
             {$Form}
         <% end_if %>
@@ -15,7 +25,7 @@
     <% end_if %>
     <% if $WidgetSetContent.exists %>
         <section class="sc-widget-holder">
-            {$InsertWidgetArea(Content)}
+            {$InsertWidgetArea('Content')}
         </section>
     <% end_if %>
     </section>
@@ -23,6 +33,6 @@
         <% if $CurrentRegisteredCustomer %>
             {$SubNavigation}
         <% end_if %>
-        {$InsertWidgetArea(Sidebar)}
+        {$InsertWidgetArea('Sidebar')}
     </aside>
 </div>

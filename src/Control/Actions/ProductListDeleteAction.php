@@ -2,6 +2,7 @@
 
 namespace SilverCart\ProductLists\Control\Actions;
 
+use SilverCart\ProductLists\Config\Config;
 use SilverCart\ProductLists\Model\Product\ProductList;
 use SilverStripe\Control\Controller;
 use SilverStripe\Security\Member;
@@ -38,14 +39,17 @@ class ProductListDeleteAction extends ProductListAction implements ProductListAc
      */
     public function canExecute(ProductList $list, Member $member = null)
     {
-        if (is_null($member)) {
-            $member = Member::currentUser();
-        }
         $canExecute = false;
-        if ($member instanceof Member &&
-            $list->MemberID == $member->ID) {
-            $canExecute = true;
+        if (Config::AllowMultipleLists()) {
+            if (is_null($member)) {
+                $member = Member::currentUser();
+            }
+            if ($member instanceof Member &&
+                $list->MemberID == $member->ID) {
+                $canExecute = true;
+            }
         }
+        $this->extend('updateCanExecute', $canExecute);
         return $canExecute;
     }
     

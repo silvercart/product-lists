@@ -5,6 +5,7 @@ de:
         AddThisProduct: 'Diesen Artikel auf einer Liste merken'
         AddToList: 'Auf die Liste'
         RememberForLater: 'für später merken'
+        ThisListIsEmpty: 'Ihre Merkliste ist leer.'
         My: 'Meine'
         PLURALNAME: 'Merklisten'
         SINGULARNAME: 'Merkliste'

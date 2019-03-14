@@ -2,6 +2,7 @@
 
 namespace SilverCart\ProductLists\Extensions\Security;
 
+use SilverCart\ProductLists\Config\Config;
 use SilverCart\ProductLists\Model\Product\ProductList;
 use SilverStripe\ORM\DataExtension;
 
@@ -44,5 +45,15 @@ class MemberExtension extends DataExtension
                     'ProductLists' => ProductList::singleton()->plural_name(),
                 ]
         );
+    }
+    
+    /**
+     * Returns whether to allow a customer to have multiple lists or not.
+     * 
+     * @return bool
+     */
+    public function AllowMultipleProductLists() : bool
+    {
+        return Config::AllowMultipleLists();
     }
 }

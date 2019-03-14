@@ -5,6 +5,7 @@ en:
         AddThisProduct: 'Add this product to a list'
         AddToList: 'Add to List'
         RememberForLater: 'remember for later'
+        ThisListIsEmpty: 'This list is empty.'
         My: 'My'
         PLURALNAME: 'Lists'
         SINGULARNAME: 'List'

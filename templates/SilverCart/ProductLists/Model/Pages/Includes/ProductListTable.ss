@@ -1,4 +1,5 @@
-<% if $ProductLists %>
+<% if $CurrentMember.AllowMultipleProductLists %>
+    <% if $ProductLists %>
 <table class="table table-striped responsive-table">
     <thead>
         <tr>
@@ -31,6 +32,7 @@
     <% end_loop %>
     </tbody>
 </table>
-<% else %>
-    <div class="alert alert-info"><%t SilverCart\ProductLists\Model\Pages\Includes\ProductListTable.NO_LIST_AVAILABLE 'You don\'t have any lists yet.' %></div>
+    <% else %>
+        <div class="alert alert-info"><%t SilverCart\ProductLists\Model\Pages\Includes\ProductListTable.NO_LIST_AVAILABLE 'You don\'t have any lists yet.' %></div>
+    <% end_if %>
 <% end_if %>

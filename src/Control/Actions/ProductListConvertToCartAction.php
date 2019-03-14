@@ -48,6 +48,7 @@ class ProductListConvertToCartAction extends ProductListAction implements Produc
         ) {
             $canExecute = true;
         }
+        $this->extend('updateCanExecute', $canExecute);
         return $canExecute;
     }
     
