@@ -381,6 +381,25 @@ class ProductList extends DataObject
     }
     
     /**
+     * Removes the given product from the list.
+     * 
+     * @param Product $product Product
+     * 
+     * @return $this
+     * 
+     * @author Sebastian Diel <sdiel@pixeltricks.de>
+     * @since 19.03.2019
+     */
+    public function removeProduct(Product $product) : ProductList
+    {
+        $existingPosition = $this->ProductListPositions()->find('ProductID', $product->ID);
+        if ($existingPosition instanceof ProductListPosition) {
+            $this->ProductListPositions()->remove($existingPosition);
+        }
+        return $this;
+    }
+    
+    /**
      * Returns the current product context
      * 
      * @return Product

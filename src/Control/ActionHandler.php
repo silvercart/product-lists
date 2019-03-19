@@ -161,7 +161,7 @@ class ActionHandler extends Controller
      * @param HTTPRequest $request  Request
      * @param Member      $customer Customer context
      * 
-     * @return SilvercartProductList
+     * @return ProductList
      */
     protected function getListByRequest(HTTPRequest $request, Member $customer = null) : ProductList
     {
@@ -180,6 +180,14 @@ class ActionHandler extends Controller
                 $list->write();
             } else {
                 $list = $customer->ProductLists()->byID($listID);
+                if (is_null($list)) {
+                    $list = $customer->getDefaultProductList();
+                    if (is_null($list)) {
+                        $list = ProductList::create();
+                        $list->MemberID = $customer->ID;
+                        $list->write();
+                    }
+                }
             }
         }
         return $list;

@@ -64,6 +64,10 @@ class MemberExtension extends DataExtension
      */
     public function getDefaultProductList() : ?ProductList
     {
-        return $this->owner->ProductLists()->filter('IsDefault', true)->first();
+        $list = $this->owner->ProductLists()->filter('IsDefault', true)->first();
+        if (is_null($list)) {
+            $list = $this->owner->ProductLists()->first();
+        }
+        return $list;
     }
 }
