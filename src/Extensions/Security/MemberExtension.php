@@ -56,4 +56,14 @@ class MemberExtension extends DataExtension
     {
         return Config::AllowMultipleLists();
     }
+    
+    /**
+     * Returns the current customers default list.
+     * 
+     * @return ProductList|null
+     */
+    public function getDefaultProductList() : ?ProductList
+    {
+        return $this->owner->ProductLists()->filter('IsDefault', true)->first();
+    }
 }
