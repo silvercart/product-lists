@@ -32,6 +32,7 @@ class ActionHandler extends Controller
     private static $allowed_actions = [
         'addToList',
         'addToListAndRemoveFromCart',
+        'addToCartAndRemoveFromList',
         'getLists',
     ];
     
@@ -49,24 +50,15 @@ class ActionHandler extends Controller
     {
         $customer = Customer::currentUser();
         if ($customer instanceof Member
-            && $customer->isRegisteredCustomer()
+         && $customer->isRegisteredCustomer()
         ) {
             $params    = $request->allParams();
             $productID = $params['ID'];
-            $listID    = $params['OtherID'];
-
-            if ($listID == 'new') {
-                $list = ProductList::create();
-                $list->MemberID = $customer->ID;
-                $list->write();
-            } else {
-                $list = $customer->ProductLists()->byID($listID);
-            }
-
+            $list      = $this->getListByRequest($request, $customer);
             if ($list instanceof ProductList) {
                 $product = Product::get()->byID($productID);
                 if ($product instanceof Product
-                    && $product->canView($customer)
+                 && $product->canView($customer)
                 ) {
                     $list->addProduct($product);
                 }
@@ -104,6 +96,39 @@ class ActionHandler extends Controller
         $this->addToList($request);
     }
     
+    /*
+     * Action to remove a product from cart and add it to a list.
+     * 
+     * @param HTTPRequest $request Request to check for product data
+     * 
+     * @return void
+     *
+     * @author Sebastian Diel <sdiel@pixeltricks.de>
+     * @since 04.01.2019
+     */
+    public function addToCartAndRemoveFromList(HTTPRequest $request)
+    {
+        $customer = Customer::currentUser();
+        if ($customer instanceof Member
+         && $customer->isRegisteredCustomer()
+        ) {
+            ShoppingCart::addProduct([
+                'productID'       => $request->param('ID'),
+                'productQuantity' => 1,
+            ]);
+            $list = $this->getListByRequest($request, $customer);
+            if ($list instanceof ProductList) {
+                $product = Product::get()->byID($request->param('ID'));
+                if ($product instanceof Product
+                 && $product->canView($customer)
+                ) {
+                    $list->removeProduct($product);
+                }
+            }
+        }
+        $this->redirectBack();
+    }
+    
     /**
      * Returns the current customers lists as a JSON string.
      * 
@@ -128,5 +153,35 @@ class ActionHandler extends Controller
         }
         $json = json_encode($map);
         return $json;
+    }
+    
+    /**
+     * Returns the product list by the given request params.
+     * 
+     * @param HTTPRequest $request  Request
+     * @param Member      $customer Customer context
+     * 
+     * @return SilvercartProductList
+     */
+    protected function getListByRequest(HTTPRequest $request, Member $customer = null) : ProductList
+    {
+        $list = null;
+        if (is_null($customer)) {
+            $customer = Customer::currentUser();
+        }
+        if ($customer instanceof Member
+         && $customer->isRegisteredCustomer()
+        ) {
+            $params = $request->allParams();
+            $listID = $params['OtherID'];
+            if ($listID == 'new') {
+                $list = ProductList::create();
+                $list->MemberID = $customer->ID;
+                $list->write();
+            } else {
+                $list = $customer->ProductLists()->byID($listID);
+            }
+        }
+        return $list;
     }
 }
