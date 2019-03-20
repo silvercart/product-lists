@@ -35,4 +35,12 @@
     <% else %>
         <div class="alert alert-info"><%t SilverCart\ProductLists\Model\Pages\Includes\ProductListTable.NO_LIST_AVAILABLE 'You don\'t have any lists yet.' %></div>
     <% end_if %>
+<% else %>
+    <% if $DefaultList.ProductListPositions %>
+        <% with $DefaultList %>
+            <% include SilverCart\ProductLists\Model\Pages\ProductListDetailTable %>
+        <% end_with %>
+    <% else %>
+        <div class="alert alert-info"><%t SilverCart\ProductLists\Model\Product\ProductList.ThisListIsEmpty 'This list is empty.' %></div>
+    <% end_if %>
 <% end_if %>
