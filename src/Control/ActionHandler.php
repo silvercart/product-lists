@@ -54,6 +54,7 @@ class ActionHandler extends Controller
         ) {
             $params    = $request->allParams();
             $productID = $params['ID'];
+            $isAjax    = $request->postVar('isAjax');
             $list      = $this->getListByRequest($request, $customer);
             if ($list instanceof ProductList) {
                 $product = Product::get()->byID($productID);
@@ -63,7 +64,26 @@ class ActionHandler extends Controller
                     $list->addProduct($product);
                 }
             }
-            $this->redirectBack();
+            if ($isAjax) {
+                $product       = Product::get()->byID($productID);
+                $modalSelector = '';
+                $modalHTML     = '';
+                if ($product instanceof Product) {
+                    $modalSelector = "#cart-modal-{$list->ID}-{$product->ID}";
+                    $modalHTML     = (string) $this->owner->renderWith(ProductList::class . '_AddAjaxResponse', [
+                        'Product' => $product,
+                        'List'    => $list,
+                    ]);
+                }
+                $json = [
+                    'ModalHTML'     => $modalHTML,
+                    'ModalSelector' => $modalSelector,
+                ];
+                print json_encode($json);
+                exit();
+            } else {
+                $this->redirectBack();
+            }
         } else {
             MyAccountHolder::reset_info_messages();
             $params    = $request->allParams();
