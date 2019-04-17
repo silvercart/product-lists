@@ -100,6 +100,29 @@ class ProductList extends DataObject
     private static $add_after_login_list = [];
     
     /**
+     * Default constructor
+     *
+     * @param array $record      array of field values
+     * @param bool  $isSingleton true if this is a singleton() object
+     *
+     * @return void
+     *
+     * @author Sebastian Diel <sdiel@pixeltricks.de>
+     * @since 17.04.2019
+     */
+    public function __construct($record = null, $isSingleton = false, $queryParams = array())
+    {
+        parent::__construct($record, $isSingleton, $queryParams);
+        if ($this->exists()) {
+            foreach ($this->ProductListPositions() as $position) {
+                if (!$position->Product()->exists()) {
+                    $position->delete();
+                }
+            }
+        }
+    }
+    
+    /**
      * Returns the created date in a nice format.
      * 
      * @return string
