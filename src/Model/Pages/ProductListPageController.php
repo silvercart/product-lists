@@ -113,7 +113,7 @@ class ProductListPageController extends MyAccountHolderController
      * @return void
      *
      * @author Sebastian Diel <sdiel@pixeltricks.de>
-     * @since 25.04.2013
+     * @since 25.04.2019
      */
     public function execute(HTTPRequest $request)
     {
@@ -121,10 +121,12 @@ class ProductListPageController extends MyAccountHolderController
         $hash   = $params['ID'];
         $listID = (int) $params['OtherID'];
         $list   = ProductList::get()->byID($listID);
-        foreach ($list->getListActions() as $action) {
-            if ($action->getActionHash() == $hash) {
-                $action->handleList($list);
-                break;
+        if ($list instanceof ProductList) {
+            foreach ($list->getListActions() as $action) {
+                if ($action->getActionHash() == $hash) {
+                    $action->handleList($list);
+                    break;
+                }
             }
         }
         $this->redirectBack();
