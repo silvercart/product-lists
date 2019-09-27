@@ -1,8 +1,8 @@
 en:
     SilverCart:
-        GoToList: "Go to list"
-        ProductAddedToList: "The product was added to your list \"{list}\"."
-        ProductAddedToListSingle: "The product was added to your list."
+        GoToList: 'Go to list'
+        ProductAddedToList: 'The product was added to your list "{list}".'
+        ProductAddedToListSingle: 'The product was added to your list.'
     SilverCart\ProductLists\Model\Product\ProductList:
         AccountRequired: 'To add products to a list, you have to login or register an account. Click here to login or create an account.'
         AccountRequiredInfo: 'To add products to a list, you have to login or register an account. After you are logged in, the product you picked will be automatically added to your list.'
@@ -10,51 +10,50 @@ en:
         AddToList: 'Add to List'
         RememberForLater: 'remember for later'
         ThisListIsEmpty: 'This list is empty.'
-        My: 'My'
-        PLURALNAME: 'Lists'
-        SINGULARNAME: 'List'
-        PLURALNAME_SHORT: 'Lists'
-        SINGULARNAME_SHORT: 'List'
+        My: My
+        PLURALNAME: Lists
+        SINGULARNAME: List
+        PLURALNAME_SHORT: Lists
+        SINGULARNAME_SHORT: List
         CreateNewList: 'Create a new list'
-        DUPLICATION: 'Copy'
+        DUPLICATION: Copy
         EDIT: 'Edit list'
-        EDIT_SHORT: 'E'
+        EDIT_SHORT: E
         ShowLists: 'Show lists'
         SHOW_DETAILS: 'Show details'
-        SHOW_DETAILS_SHORT: 'Details'
+        SHOW_DETAILS_SHORT: Details
         ISDEFAULT: 'Use as default'
-        TITLE: 'Name'
-        TITLE_DEFAULT: "List from {date} o'clock"
+        TITLE: Name
+        TITLE_DEFAULT: 'List from {date} o''clock'
         TITLE_DEFAULT_DATEFORMAT: 'd.m.Y H:i'
     SilverCart\ProductLists\Model\ProductListPosition:
-        PLURALNAME: 'List-Positions'
-        SINGULARNAME: 'List-Position'
+        PLURALNAME: List-Positions
+        SINGULARNAME: List-Position
     SilverCart\ProductLists\Model\Pages\ProductListPage:
-        PLURALNAME: 'List-Pages'
-        SINGULARNAME: 'List-Page'
+        PLURALNAME: List-Pages
+        SINGULARNAME: List-Page
         DEFAULT_TITLE: 'My Lists'
-        DEFAULT_URLSEGMENT: 'my-lists'
+        DEFAULT_URLSEGMENT: my-lists
         YOUR_LISTS: 'Your Lists'
     SilverCart\ProductLists\Model\Pages\Includes\ProductListTable:
         COL_COUNT: 'Product count'
-        COL_CREATED: 'Created'
+        COL_CREATED: Created
         COL_LASTEDITED: 'Last update'
-        COL_NAME: 'Name'
-        NO_LIST_AVAILABLE: "You don't have any lists yet."
+        COL_NAME: Name
+        NO_LIST_AVAILABLE: 'You don''t have any lists yet.'
     SilverCart\ProductLists\Control\Actions\ProductListDeleteAction:
-        TITLE: 'Delete'
+        TITLE: Delete
         BUTTONTITLE: 'Delete list'
         BUTTONTITLESHORT: '-'
     SilverCart\ProductLists\Control\Actions\ProductListDuplicateAction:
-        TITLE: 'Duplicate'
+        TITLE: Duplicate
         BUTTONTITLE: 'Duplicate list'
-        BUTTONTITLESHORT: '+'
+        BUTTONTITLESHORT: +
     SilverCart\ProductLists\Control\Actions\ProductListSetAsDefaultAction:
         TITLE: 'Use as default'
         BUTTONTITLE: 'Use this list as default'
-        BUTTONTITLESHORT: 'D'
+        BUTTONTITLESHORT: D
     SilverCart\ProductLists\Control\Actions\ProductListConvertToCartAction:
         TITLE: 'Add to cart'
         BUTTONTITLE: 'Add this list to cart'
-        BUTTONTITLESHORT: 'Cart'
-
+        BUTTONTITLESHORT: Cart
