@@ -29,6 +29,8 @@ class RemovePositionFormExtension extends Extension
      */
     public function updateAfterFormContent(&$afterFormContent)
     {
-        $afterFormContent .= $this->owner->renderWith(self::class);
+        if ($this->owner->getPosition()->Product()->canAddToList()) {
+            $afterFormContent .= $this->owner->renderWith(self::class);
+        }
     }
 }

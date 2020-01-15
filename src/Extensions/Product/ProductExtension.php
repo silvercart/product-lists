@@ -8,6 +8,7 @@ use SilverCart\ProductLists\Model\Product\ProductListPosition;
 use SilverStripe\Control\Director;
 use SilverStripe\ORM\ArrayList;
 use SilverStripe\ORM\DataExtension;
+use SilverStripe\ORM\SS_List;
 use SilverStripe\Security\Member;
 
 /**
@@ -36,6 +37,26 @@ class ProductExtension extends DataExtension
     protected $contextProductListPosition = null;
     
     /**
+     * Returns whether the given $member can add this product to a list.
+     * 
+     * @param Member $member
+     * 
+     * @return bool
+     */
+    public function canAddToList(Member $member = null) : bool
+    {
+        $can     = true;
+        $results = $this->owner->extend('updateCanAddToList', $member);
+        if ($results
+         && is_array($results)
+         && !min($results)
+        ) {
+            $can = false;
+        }
+        return $can;
+    }
+    
+    /**
      * Returns the lists of the current member.
      * 
      * @return \SilverStripe\ORM\SS_List
@@ -43,7 +64,8 @@ class ProductExtension extends DataExtension
      * @author Sebastian Diel <sdiel@pixeltricks.de>
      * @since 13.07.2017
      */
-    public function ProductLists() {
+    public function ProductLists() : SS_List
+    {
         if (Member::currentUserID()) {
             ProductList::set_product_context($this->owner);
             $lists = ProductList::get_by_member(Member::currentUser());
@@ -61,7 +83,7 @@ class ProductExtension extends DataExtension
      * @author Sebastian Diel <sdiel@pixeltricks.de>
      * @since 24.08.2018
      */
-    public function AddToNewListLink($removeFromShoppingCart = false)
+    public function AddToNewListLink($removeFromShoppingCart = false) : string
     {
         $action = "addToList";
         if ($removeFromShoppingCart) {
@@ -78,7 +100,7 @@ class ProductExtension extends DataExtension
      * @author Sebastian Diel <sdiel@pixeltricks.de>
      * @since 24.08.2018
      */
-    public function AddToDefaultListLink($removeFromShoppingCart = false)
+    public function AddToDefaultListLink($removeFromShoppingCart = false) : string
     {
         $linkID = 'new';
         $defaultList = ProductList::default_list();
@@ -97,7 +119,7 @@ class ProductExtension extends DataExtension
      * 
      * @return ProductList|null
      */
-    public function getContextProductList(): ?ProductList
+    public function getContextProductList() : ?ProductList
     {
         return $this->contextProductList;
     }
@@ -107,7 +129,7 @@ class ProductExtension extends DataExtension
      * 
      * @return ProductListPosition|null
      */
-    public function getContextProductListPosition(): ?ProductListPosition
+    public function getContextProductListPosition() : ?ProductListPosition
     {
         return $this->contextProductListPosition;
     }
