@@ -2,10 +2,10 @@ it:
     SilverCart:
         GoToList: 'Vai all''elenco'
         ProductAddedToList: 'L''articolo è stato aggiunto alla lista dei preferiti "{list}".'
-        ProductAddedToListSingle: 'L''articolo è stato aggiunto alla lista dei preferiti.'
+        ProductAddedToListSingle: 'L''articolo è stato aggiunto a preferiti.'
     SilverCart\ProductLists\Model\Product\ProductList:
         AccountRequired: 'Per utilizzare una lista preferiti, è necessario aver effettuato l''accesso. Per accedere?'
-        AccountRequiredInfo: 'Per aggiungere prodotti ad un elenco, è necessario effettuare il login o registrare un account. Dopo aver effettuato l''accesso, il prodotto selezionato verrà aggiunto automaticamente alla tua lista.'
+        AccountRequiredInfo: 'Per aggiungere prodotti ad un elenco, è necessario effettuare il login o registrarsi sul nostro portale acquisti. Dopo aver effettuato l''accesso, il prodotto selezionato verrà aggiunto automaticamente alla tua lista.'
         AddThisProduct: 'Aggiungi alla lista'
         AddToList: 'Aggiungi alla lista'
         RememberForLater: 'Ricorda per dopo'
@@ -27,20 +27,20 @@ it:
         TITLE_DEFAULT: 'Lista dal {date} ora'
         TITLE_DEFAULT_DATEFORMAT: 'd.m.Y H:i'
     SilverCart\ProductLists\Model\ProductListPosition:
-        PLURALNAME: 'Posizioni lista dei desideri'
-        SINGULARNAME: 'Posizione lista dei desideri'
+        PLURALNAME: 'Posizioni elenco preferiti'
+        SINGULARNAME: 'Posizione elenco preferiti'
     SilverCart\ProductLists\Model\Pages\ProductListPage:
-        PLURALNAME: 'Pagine lista dei desideri'
-        SINGULARNAME: 'Pagina lista dei desideri'
-        DEFAULT_TITLE: 'La mia lista dei desideri'
-        DEFAULT_URLSEGMENT: Liste
-        YOUR_LISTS: 'Le tue liste dei desideri'
+        PLURALNAME: 'Pagine elenco preferiti'
+        SINGULARNAME: 'Pagina elenco preferiti'
+        DEFAULT_TITLE: 'I miei preferiti'
+        DEFAULT_URLSEGMENT: liste
+        YOUR_LISTS: 'I tuoi preferiti'
     SilverCart\ProductLists\Model\Pages\Includes\ProductListTable:
         COL_COUNT: 'Numero di articoli'
         COL_CREATED: 'Creato il'
         COL_LASTEDITED: 'Ultima modifica il'
         COL_NAME: Nome
-        NO_LIST_AVAILABLE: 'Ancora nessuna lista dei desideri presente'
+        NO_LIST_AVAILABLE: 'Non hai ancora aggiunto alcun articolo.'
     SilverCart\ProductLists\Control\Actions\ProductListDeleteAction:
         TITLE: Cancellare
         BUTTONTITLE: 'Cancella lista'
