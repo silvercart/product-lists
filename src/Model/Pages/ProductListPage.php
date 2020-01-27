@@ -24,6 +24,7 @@ use SilverStripe\View\ArrayData;
  */
 class ProductListPage extends MyAccountHolder
 {
+    const IDENTIFIER_PRODUCT_LIST_PAGE = 'SilvercartProductListPage';
     /**
      * Returns the lists of the current member.
      * 
@@ -85,9 +86,9 @@ class ProductListPage extends MyAccountHolder
      */
     public function requireDefaultRecords()
     {
-        $page = Tools::PageByIdentifierCode('SilvercartProductListPage');
+        $page = Tools::PageByIdentifierCode(self::IDENTIFIER_PRODUCT_LIST_PAGE);
         if (!($page instanceof ProductListPage)) {
-            $rootPage = Tools::PageByIdentifierCode('SilvercartMyAccountHolder');
+            $rootPage = Tools::PageByIdentifierCode(self::IDENTIFIER_MY_ACCOUNT_HOLDER);
             if (!$rootPage instanceof MyAccountHolder) {
                 return;
             }

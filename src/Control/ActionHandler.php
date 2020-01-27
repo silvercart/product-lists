@@ -91,7 +91,7 @@ class ActionHandler extends Controller
             $list      = ProductList::singleton();
             ProductList::add_after_login($productID);
             MyAccountHolder::add_info_message($list->fieldLabel('AccountRequiredInfo'));
-            $this->redirect(Tools::PageByIdentifierCode('SilvercartMyAccountHolder')->Link());
+            $this->redirect(Tools::PageByIdentifierCode(MyAccountHolder::IDENTIFIER_MY_ACCOUNT_HOLDER)->Link());
         }
     }
     

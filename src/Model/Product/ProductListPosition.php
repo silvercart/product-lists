@@ -4,6 +4,7 @@ namespace SilverCart\ProductLists\Model\Product;
 
 use SilverCart\Dev\Tools;
 use SilverCart\Model\Product\Product;
+use SilverCart\ProductLists\Model\Pages\ProductListPage;
 use SilverCart\ProductLists\Model\Product\ProductList;
 use SilverStripe\Control\Director;
 use SilverStripe\ORM\DataObject;
@@ -119,7 +120,7 @@ class ProductListPosition extends DataObject
      */
     public function RemoveLink()
     {
-        return Tools::PageByIdentifierCode('SilvercartProductListPage')->Link('removeitem') . '/' . $this->ProductListID . '/' . $this->ID;
+        return Tools::PageByIdentifierCode(ProductListPage::IDENTIFIER_PRODUCT_LIST_PAGE)->Link('removeitem') . '/' . $this->ProductListID . '/' . $this->ID;
     }
 
     /**

@@ -6,6 +6,7 @@ use SilverCart\Dev\Tools;
 use SilverCart\Model\Customer\Customer;
 use SilverCart\Model\Product\Product;
 use SilverCart\ProductLists\Control\Actions\ProductListAction;
+use SilverCart\ProductLists\Model\Pages\ProductListPage;
 use SilverStripe\Control\Controller;
 use SilverStripe\Control\Director;
 use SilverStripe\i18n\i18n;
@@ -344,7 +345,7 @@ class ProductList extends DataObject
      */
     public function Link($action = 'detail')
     {
-        return Tools::PageByIdentifierCode('SilvercartProductListPage')->Link($action) . '/' . $this->ID;
+        return Tools::PageByIdentifierCode(ProductListPage::IDENTIFIER_PRODUCT_LIST_PAGE)->Link($action) . '/' . $this->ID;
     }
 
     /**

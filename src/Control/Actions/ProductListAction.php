@@ -3,6 +3,7 @@
 namespace SilverCart\ProductLists\Control\Actions;
 
 use SilverCart\Dev\Tools;
+use SilverCart\ProductLists\Model\Pages\ProductListPage;
 use SilverStripe\Control\Controller;
 
 /**
@@ -80,7 +81,7 @@ class ProductListAction extends Controller
      */
     public function Link($action = 'execute')
     {
-        return Tools::PageByIdentifierCode('SilvercartProductListPage')->Link($action) . '/' . $this->ID;
+        return Tools::PageByIdentifierCode(ProductListPage::IDENTIFIER_PRODUCT_LIST_PAGE)->Link($action) . '/' . $this->ID;
     }
 
     /**
