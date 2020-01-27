@@ -3,6 +3,8 @@ it:
         GoToList: 'Vai all''elenco'
         ProductAddedToList: 'L''articolo è stato aggiunto alla lista dei preferiti "{list}".'
         ProductAddedToListSingle: 'L''articolo è stato aggiunto a preferiti.'
+    SilverCart\ProductLists:
+        ProductsOnYourList: 'Articolo aggiunto alla lista dei preferiti'
     SilverCart\ProductLists\Model\Product\ProductList:
         AccountRequired: 'Per utilizzare una lista preferiti, è necessario aver effettuato l''accesso. Per accedere?'
         AccountRequiredInfo: 'Per aggiungere prodotti ad un elenco, è necessario effettuare il login o registrarsi sul nostro portale acquisti. Dopo aver effettuato l''accesso, il prodotto selezionato verrà aggiunto automaticamente alla tua lista.'

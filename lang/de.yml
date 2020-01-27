@@ -3,6 +3,8 @@ de:
         GoToList: "Zur Merkliste"
         ProductAddedToList: "Der Artikel wurde zur Merkliste \"{list}\" hinzugefügt."
         ProductAddedToListSingle: "Der Artikel wurde zur Merkliste hinzugefügt."
+    SilverCart\ProductLists:
+        ProductsOnYourList: 'Artikel auf Ihrer Merkliste'
     SilverCart\ProductLists\Model\Product\ProductList:
         AccountRequired: 'Sie müssen angemeldet sein, um eine Merkliste zu verwenden. Zur Anmeldung?'
         AccountRequiredInfo: 'Sie müssen angemeldet sein, um eine Merkliste zu verwenden. Nach dem Login oder der Registrierung wird der gewählte Artikel automatisch zu Ihrer Merkliste hinzugefügt.'
