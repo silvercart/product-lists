@@ -12,18 +12,18 @@
             <div class="modal-body">
             <% with $Product %>
                 <div class="row">
-                    <div class="col-xs-2">
+                    <div class="col-2 text-center">
                         <% if $ListImage %>
-                            <img class="img-responsive" src="{$ListImage.Pad(100,80).URL}" alt="{$Title}" />
+                            <img class="img-fluid" src="{$ListImage.Pad(100,80).URL}" alt="{$Title}" />
                         <% end_if %>
                     </div>
-                    <div class="col-xs-4">
+                    <div class="col-6">
                         <div class="silvercart-product-title">
                             <h3 class="mt-0">{$Title.HTML}</h3>
                         </div>
                     </div>
-                    <div class="col-xs-6">
-                        <span class="text-lg">{$Price.Nice}</span>
+                    <div class="col-4 text-right text-lg">
+                        {$PriceNice}
                     </div>
                 </div>
             <% end_with %>
