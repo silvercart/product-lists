@@ -1,7 +1,7 @@
 <% if $CurrentMember.AllowMultipleProductLists %>
     <% if $CurrentMember.isRegisteredCustomer %>
         <% with $Position.Product %>
-<div class="btn-group btn-group-xs">
+<div class="btn-group btn-group-sm">
     <a href="{$AddToDefaultListLink(true)}" class="btn btn-link pr-0"><span class="fa fa-check"></span> <%t SilverCart\ProductLists\Model\Product\ProductList.RememberForLater 'remember for later' %></a>
     <button type="button" class="btn btn-link pl-1 dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <span class="sr-only"><%t SilverCart\ProductLists\Model\Product\ProductList.ShowLists 'Show lists' %></span>
@@ -19,7 +19,7 @@
         <% end_with %>
     <% else %>
         <% with $Position.Product %>
-<div class="btn-group btn-group-xs">
+<div class="btn-group btn-group-sm">
     <a href="{$AddToNewListLink(true)}" class="btn btn-link pr-0"><span class="fa fa-check"></span> <%t SilverCart\ProductLists\Model\Product\ProductList.RememberForLater 'remember for later' %></a>
     <button type="button" class="btn btn-link pl-1 dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <span class="sr-only"><%t SilverCart\ProductLists\Model\Product\ProductList.ShowLists 'Show lists' %></span>
@@ -31,7 +31,7 @@
         <% end_with %>
     <% end_if %>
 <% else %>
-<div class="btn-group btn-group-xs">
+<div class="btn-group btn-group-sm">
     <% if $CurrentMember.isRegisteredCustomer %>
         <% with $Position.Product %>
     <a href="{$AddToDefaultListLink(true)}" class="btn btn-link pr-0"><span class="fa fa-check"></span> <%t SilverCart\ProductLists\Model\Product\ProductList.RememberForLater 'remember for later' %></a>
