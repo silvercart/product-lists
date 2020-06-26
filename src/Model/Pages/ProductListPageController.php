@@ -7,6 +7,7 @@ use SilverCart\Model\Pages\MyAccountHolderController;
 use SilverCart\ProductLists\Model\Product\ProductList;
 use SilverCart\ProductLists\Model\Product\ProductListPosition;
 use SilverStripe\Control\HTTPRequest;
+use SilverStripe\Control\HTTPResponse;
 use SilverStripe\Core\Convert;
 use SilverStripe\ORM\ArrayList;
 use SilverStripe\Security\Member;
@@ -46,7 +47,7 @@ class ProductListPageController extends MyAccountHolderController
      * 
      * @return ProductList
      */
-    public function getCurrentList()
+    public function getCurrentList() : ?ProductList
     {
         return $this->currentList;
     }
@@ -56,11 +57,12 @@ class ProductListPageController extends MyAccountHolderController
      * 
      * @param ProductList $currentList List to set.
      * 
-     * @return void
+     * @return ProductListPageController
      */
-    public function setCurrentList($currentList)
+    public function setCurrentList(ProductList $currentList) : ProductListPageController
     {
         $this->currentList = $currentList;
+        return $this;
     }
 
     /**
@@ -69,18 +71,18 @@ class ProductListPageController extends MyAccountHolderController
      * 
      * @param HTTPRequest $request Request to handle
      * 
-     * @return string
+     * @return HTTPResponse
      *
      * @author Sebastian Diel <sdiel@pixeltricks.de>
      * @since 24.08.2018
      */
-    public function detail(HTTPRequest $request)
+    public function detail(HTTPRequest $request) : HTTPResponse
     {
         $params = $request->allParams();
         $listID = (int) $params['ID'];
         $list   = ProductList::get()->byID($listID);
         $this->setCurrentList($list);
-        return $this->render();
+        return HTTPResponse::create($this->render(), 200);
     }
 
     /**
@@ -89,19 +91,19 @@ class ProductListPageController extends MyAccountHolderController
      * 
      * @param HTTPRequest $request Request to handle
      * 
-     * @return void
+     * @return HTTPResponse
      *
      * @author Sebastian Diel <sdiel@pixeltricks.de>
      * @since 25.04.2013
      */
-    public function update(HTTPRequest $request)
+    public function update(HTTPRequest $request) : HTTPResponse
     {
         $params = $request->allParams();
         $listID = (int) $params['ID'];
         $list   = ProductList::get()->byID($listID);
         $list->Title = Convert::raw2sql($request->postVar('Title'));
         $list->write();
-        $this->redirect($this->Link('detail') . '/' . $listID);
+        return $this->redirect($this->Link('detail') . '/' . $listID);
     }
 
     /**
@@ -110,12 +112,12 @@ class ProductListPageController extends MyAccountHolderController
      * 
      * @param HTTPRequest $request Request to handle
      * 
-     * @return void
+     * @return HTTPResponse
      *
      * @author Sebastian Diel <sdiel@pixeltricks.de>
      * @since 25.04.2019
      */
-    public function execute(HTTPRequest $request)
+    public function execute(HTTPRequest $request) : ?HTTPResponse
     {
         $params = $request->allParams();
         $hash   = $params['ID'];
@@ -129,7 +131,10 @@ class ProductListPageController extends MyAccountHolderController
                 }
             }
         }
-        $this->redirectBack();
+        if (!$this->redirectedTo()) {
+            return $this->redirectBack();
+        }
+        return null;
     }
 
     /**
@@ -137,12 +142,12 @@ class ProductListPageController extends MyAccountHolderController
      * 
      * @param HTTPRequest $request Request to handle
      * 
-     * @return void
+     * @return HTTPResponse
      *
      * @author Sebastian Diel <sdiel@pixeltricks.de>
      * @since 24.08.2018
      */
-    public function removeitem(HTTPRequest $request)
+    public function removeitem(HTTPRequest $request) : ?HTTPResponse
     {
         $params = $request->allParams();
         $listID = (int) $params['ID'];
@@ -158,7 +163,10 @@ class ProductListPageController extends MyAccountHolderController
         ) {
             $item->delete();
         }
-        $this->redirectBack();
+        if (!$this->redirectedTo()) {
+            return $this->redirectBack();
+        }
+        return null;
     }
     
     /**
@@ -168,7 +176,7 @@ class ProductListPageController extends MyAccountHolderController
      * 
      * @return ArrayList
      */
-    public function getListActions(ProductList $list = null)
+    public function getListActions(ProductList $list = null) : ArrayList
     {
         if (is_null($list)) {
             $list = $this->getCurrentList();
@@ -180,5 +188,4 @@ class ProductListPageController extends MyAccountHolderController
         }
         return $actions;
     }
-    
 }
