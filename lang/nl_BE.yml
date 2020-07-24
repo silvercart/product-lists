@@ -1,0 +1,57 @@
+nl_BE:
+    SilverCart:
+        GoToList: 'Naar de favorietenlijst'
+        ProductAddedToListSingle: 'Het artikel werd toegevoegd aan de favorietenlijst.'
+    SilverCart\ProductLists\Model\Product\ProductList:
+        AccountRequired: 'U moet ingelogd zijn om een favorietenlijst te kunnen gebruiken. Veder gaan naar inloggen?'
+        AccountRequiredInfo: 'U moet ingelogd zijn om een favorietenlijst te kunnen gebruiken. Na het inloggen of registreren wordt het geselecteerde artikel automatisch aan uw favorietenlijst toegevoegd.'
+        AddThisProduct: 'Dat artikel op een lijst noteren'
+        My: Mijn
+        PLURALNAME: Favorietenlijsten
+        SINGULARNAME: Favorietenlijst
+        PLURALNAME_SHORT: Lijsten
+        SINGULARNAME_SHORT: Lijst
+        CreateNewList: 'Nieuwe lijst aanmaken'
+        DUPLICATION: Kopie
+        EDIT: 'Lijst bewerken'
+        EDIT_SHORT: B
+        ShowLists: 'Lijsten weergeven'
+        SHOW_DETAILS: 'Details weergeven'
+        SHOW_DETAILS_SHORT: Details
+        ISDEFAULT: 'Gebruiken als standaard'
+        TITLE: Naam
+        TITLE_DEFAULT: 'Lijst vanaf {date} uur'
+        TITLE_DEFAULT_DATEFORMAT: 'd.m.Y H:i'
+    SilverCart\ProductLists\Model\ProductListPosition:
+        PLURALNAME: 'Posities van de favorietenlijsten'
+        SINGULARNAME: 'Positie van de favorietenlijsten'
+    SilverCart\ProductLists\Model\Pages\ProductListPage:
+        PLURALNAME: 'Pagina''s met favorietenlijsten'
+        SINGULARNAME: 'Pagina met favorietenlijsten'
+        DEFAULT_TITLE: 'Mijn favorietenlijsten'
+        DEFAULT_URLSEGMENT: Lijsten
+        YOUR_LISTS: 'Uw favorietenlijsten'
+    SilverCart\ProductLists\Model\Pages\Includes\ProductListTable:
+        COL_COUNT: 'Aantal artikelen'
+        COL_CREATED: 'Opgemaakt op'
+        COL_LASTEDITED: 'Laatst gewijzigd op'
+        COL_NAME: Naam
+        NO_LIST_AVAILABLE: 'Er zijn nog geen favorietenlijsten beschikbaar.'
+    SilverCart\ProductLists\Control\Actions\ProductListDeleteAction:
+        TITLE: Verwijderen
+        BUTTONTITLE: 'Lijst verwijderen'
+        BUTTONTITLESHORT: '-'
+    SilverCart\ProductLists\Control\Actions\ProductListDuplicateAction:
+        TITLE: Dupliceren
+        BUTTONTITLE: 'Lijst dupliceren'
+        BUTTONTITLESHORT: +
+    SilverCart\ProductLists\Control\Actions\ProductListSetAsDefaultAction:
+        TITLE: 'Gebruiken als standaard'
+        BUTTONTITLE: 'Lijst standaard gebruiken'
+        BUTTONTITLESHORT: D
+    SilverCart\ProductLists\Control\Actions\ProductListConvertToCartAction:
+        TITLE: 'Toevoegen aan winkelwagen'
+        BUTTONTITLE: 'Lijst toevoegen aan winkelwagen'
+        BUTTONTITLESHORT: Winkelwagen
+    SilverCart\ProductLists:
+        ProductsOnYourList: 'Artikel toevoegen aan favorietenlijst'

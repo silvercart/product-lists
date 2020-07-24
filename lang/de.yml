@@ -1,8 +1,8 @@
 de:
     SilverCart:
-        GoToList: "Zur Merkliste"
-        ProductAddedToList: "Der Artikel wurde zur Merkliste \"{list}\" hinzugefügt."
-        ProductAddedToListSingle: "Der Artikel wurde zur Merkliste hinzugefügt."
+        GoToList: 'Zur Merkliste'
+        ProductAddedToList: 'Der Artikel wurde zur Merkliste \"{list}\" hinzugefügt.'
+        ProductAddedToListSingle: 'Der Artikel wurde zur Merkliste hinzugefügt.'
     SilverCart\ProductLists:
         ProductsOnYourList: 'Artikel auf Ihrer Merkliste'
     SilverCart\ProductLists\Model\Product\ProductList:
@@ -12,50 +12,50 @@ de:
         AddToList: 'Auf die Liste'
         RememberForLater: 'für später merken'
         ThisListIsEmpty: 'Ihre Merkliste ist leer.'
-        My: 'Meine'
-        PLURALNAME: 'Merklisten'
-        SINGULARNAME: 'Merkliste'
-        PLURALNAME_SHORT: 'Listen'
-        SINGULARNAME_SHORT: 'Liste'
+        My: Meine
+        PLURALNAME: Merklisten
+        SINGULARNAME: Merkliste
+        PLURALNAME_SHORT: Listen
+        SINGULARNAME_SHORT: Liste
         CreateNewList: 'Neue Liste erstellen'
-        DUPLICATION: 'Kopie'
+        DUPLICATION: Kopie
         EDIT: 'Liste bearbeiten'
-        EDIT_SHORT: 'B'
+        EDIT_SHORT: B
         ShowLists: 'Listen anzeigen'
         SHOW_DETAILS: 'Details anzeigen'
-        SHOW_DETAILS_SHORT: 'Details'
+        SHOW_DETAILS_SHORT: Details
         ISDEFAULT: 'Als Standard verwenden'
-        TITLE: 'Name'
+        TITLE: Name
         TITLE_DEFAULT: 'Liste vom {date} Uhr'
         TITLE_DEFAULT_DATEFORMAT: 'd.m.Y H:i'
     SilverCart\ProductLists\Model\ProductListPosition:
-        PLURALNAME: 'Merklisten-Positionen'
-        SINGULARNAME: 'Merklisten-Position'
+        PLURALNAME: Merklisten-Positionen
+        SINGULARNAME: Merklisten-Position
     SilverCart\ProductLists\Model\Pages\ProductListPage:
-        PLURALNAME: 'Merklisten-Seiten'
-        SINGULARNAME: 'Merklisten-Seite'
+        PLURALNAME: Merklisten-Seiten
+        SINGULARNAME: Merklisten-Seite
         DEFAULT_TITLE: 'Meine Merklisten'
-        DEFAULT_URLSEGMENT: 'listen'
+        DEFAULT_URLSEGMENT: listen
         YOUR_LISTS: 'Ihre Merklisten'
     SilverCart\ProductLists\Model\Pages\Includes\ProductListTable:
         COL_COUNT: 'Anzahl Artikel'
         COL_CREATED: 'Erstellt am'
         COL_LASTEDITED: 'Zuletzt geändert am'
-        COL_NAME: 'Name'
+        COL_NAME: Name
         NO_LIST_AVAILABLE: 'Noch keine Merklisten vorhanden.'
     SilverCart\ProductLists\Control\Actions\ProductListDeleteAction:
-        TITLE: 'Löschen'
+        TITLE: Löschen
         BUTTONTITLE: 'Liste löschen'
         BUTTONTITLESHORT: '-'
     SilverCart\ProductLists\Control\Actions\ProductListDuplicateAction:
-        TITLE: 'Duplizieren'
+        TITLE: Duplizieren
         BUTTONTITLE: 'Liste duplizieren'
-        BUTTONTITLESHORT: '+'
+        BUTTONTITLESHORT: +
     SilverCart\ProductLists\Control\Actions\ProductListSetAsDefaultAction:
         TITLE: 'Als Standard verwenden'
         BUTTONTITLE: 'Liste als Standard verwenden'
-        BUTTONTITLESHORT: 'D'
+        BUTTONTITLESHORT: D
     SilverCart\ProductLists\Control\Actions\ProductListConvertToCartAction:
         TITLE: 'In den Warenkorb legen'
         BUTTONTITLE: 'Liste in den Warenkorb legen'
-        BUTTONTITLESHORT: 'Warenkorb'
+        BUTTONTITLESHORT: Warenkorb

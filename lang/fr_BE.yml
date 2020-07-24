@@ -1,0 +1,57 @@
+fr_BE:
+    SilverCart:
+        GoToList: 'Vers la liste des favoris'
+        ProductAddedToListSingle: 'L''article a été ajouté à la liste des favoris.'
+    SilverCart\ProductLists\Model\Product\ProductList:
+        AccountRequired: 'Vous devez être connecté pour utiliser une liste de favoris. Vers la connexion?'
+        AccountRequiredInfo: 'Vous devez être connecté pour utiliser une liste de favoris. Une fois connecté ou enregistré, l''article sélectionné est automatiquement ajouté à votre liste de favoris.'
+        AddThisProduct: 'Ajouter cet article à une liste'
+        My: Mes
+        PLURALNAME: 'Listes de favoris'
+        SINGULARNAME: 'Liste de favoris'
+        PLURALNAME_SHORT: Listes
+        SINGULARNAME_SHORT: Liste
+        CreateNewList: 'Créer une nouvelle liste'
+        DUPLICATION: Copie
+        EDIT: 'Modifier la liste'
+        EDIT_SHORT: B
+        ShowLists: 'Afficher les listes'
+        SHOW_DETAILS: 'Afficher les détails'
+        SHOW_DETAILS_SHORT: Détails
+        ISDEFAULT: 'Utiliser par défaut'
+        TITLE: Nom
+        TITLE_DEFAULT: 'Liste à partir de {date} heures'
+        TITLE_DEFAULT_DATEFORMAT: 'd.m.Y H:i'
+    SilverCart\ProductLists\Model\ProductListPosition:
+        PLURALNAME: 'Postes des listes de favoris'
+        SINGULARNAME: 'Poste des listes de favoris'
+    SilverCart\ProductLists\Model\Pages\ProductListPage:
+        PLURALNAME: 'Pages de listes de favoris'
+        SINGULARNAME: 'Page de listes de favoris'
+        DEFAULT_TITLE: 'Mes listes de favoris'
+        DEFAULT_URLSEGMENT: listes
+        YOUR_LISTS: 'Vos listes de favoris'
+    SilverCart\ProductLists\Model\Pages\Includes\ProductListTable:
+        COL_COUNT: 'Nombre d''articles'
+        COL_CREATED: 'Créé le'
+        COL_LASTEDITED: 'Dernière modification le'
+        COL_NAME: Nom
+        NO_LIST_AVAILABLE: 'Aucune liste de favoris disponible pour le moment.'
+    SilverCart\ProductLists\Control\Actions\ProductListDeleteAction:
+        TITLE: Supprimer
+        BUTTONTITLE: 'Supprimer la liste'
+        BUTTONTITLESHORT: '-'
+    SilverCart\ProductLists\Control\Actions\ProductListDuplicateAction:
+        TITLE: Dupliquer
+        BUTTONTITLE: 'Dupliquer la liste'
+        BUTTONTITLESHORT: +
+    SilverCart\ProductLists\Control\Actions\ProductListSetAsDefaultAction:
+        TITLE: 'Utiliser par défaut'
+        BUTTONTITLE: 'Utiliser la liste par défaut'
+        BUTTONTITLESHORT: D
+    SilverCart\ProductLists\Control\Actions\ProductListConvertToCartAction:
+        TITLE: 'Ajouter au panier'
+        BUTTONTITLE: 'Ajouter la liste au panier'
+        BUTTONTITLESHORT: Panier
+    SilverCart\ProductLists:
+        ProductsOnYourList: 'Ajouter l''article à vos favoris'
