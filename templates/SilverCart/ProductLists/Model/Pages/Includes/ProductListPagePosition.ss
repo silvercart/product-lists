@@ -11,8 +11,13 @@
         <td class="text-right">
             <div class="btn-group">
                 <a class="btn btn-sm btn-outline-primary" href="{$Up.RemoveLink}" title="<%t SilverCart\Model\Pages\Page.REMOVE_FROM_CART 'remove' %>" data-toggle="tooltip"><span class="fa fa-trash"></span></a>
-                <a class="btn btn-sm btn-outline-primary" href="{$Up.AddToCartLink}" title="<%t SilverCart\Model\Product\Product.ADD_TO_CART 'add to cart' %>" data-toggle="tooltip"><span class="fa fa-shopping-cart"></span></a>
+                <a class="btn btn-sm btn-outline-primary <% if $isInCart %>disabled<% end_if %>" href="{$Up.AddToCartLink}" title="<%t SilverCart\Model\Product\Product.ADD_TO_CART 'add to cart' %>" data-toggle="tooltip"><span class="fa fa-shopping-cart"></span></a>
             </div>
+            <% if $isInCart %>
+            <div class="p-relative">
+                <div class="alert alert-success p-1 mt-1 mb-0 p-absolute r-0 text-nowrap"><span class="fas fa-check"></span> {$fieldLabel('IsInCart')}</div>
+            </div>
+            <% end_if %>
         </td>
     </tr>
     <% end_with %>

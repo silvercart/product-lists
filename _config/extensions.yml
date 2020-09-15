@@ -4,6 +4,9 @@ Name: silvercart-product-list-extensions
 SilverStripe\Security\Member:
   extensions:
     - SilverCart\ProductLists\Extensions\Security\MemberExtension
+SilverCart\Model\Order\OrderPosition:
+  extensions:
+    - SilverCart\ProductLists\Extensions\Order\OrderPositionExtension
 SilverCart\Model\Product\Product:
   extensions:
     - SilverCart\ProductLists\Extensions\Product\ProductExtension
