@@ -1,14 +1,14 @@
 nl:
     SilverCart:
-        GoToList: 'Naar de volglijst'
-        ProductAddedToListSingle: 'Het item is toegevoegd aan de volglijst.'
+        GoToList: 'Ga naar de lijst'
+        ProductAddedToListSingle: 'Het product is toegevoegd aan uw lijst " {list} ".'
     SilverCart\ProductLists\Model\Product\ProductList:
         AccountRequired: 'U moet ingelogd zijn om een lijst te gebruiken. Klik hier om in te loggen of te registreren.'
         AccountRequiredInfo: 'U moet ingelogd zijn om een lijst te kunnen gebruiken. Na het inloggen of registreren wordt het geselecteerde item automatisch toegevoegd aan uw lijst.'
         AddThisProduct: 'Voeg dit product toe aan een lijst'
         My: Mijn
         PLURALNAME: Lijst
-        SINGULARNAME: Volglijst
+        SINGULARNAME: Lijst
         PLURALNAME_SHORT: Lijsten
         SINGULARNAME_SHORT: Lijst
         CreateNewList: 'Nieuwe lijst aanmaken'
@@ -23,8 +23,8 @@ nl:
         TITLE_DEFAULT: 'Lijst vanaf {date} uur'
         TITLE_DEFAULT_DATEFORMAT: 'd.m.Y H:i'
     SilverCart\ProductLists\Model\ProductListPosition:
-        PLURALNAME: 'Bekijk de items op de watchlist'
-        SINGULARNAME: 'Item in de wachtlijst'
+        PLURALNAME: Lijstposities
+        SINGULARNAME: Lijstpositie
     SilverCart\ProductLists\Model\Pages\ProductListPage:
         PLURALNAME: 'Bladwijzerpagina''s'
         SINGULARNAME: 'Bekijk de pagina met favorieten'
