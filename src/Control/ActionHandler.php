@@ -10,6 +10,7 @@ use SilverCart\Model\Product\Product;
 use SilverCart\ProductLists\Model\Product\ProductList;
 use SilverStripe\Control\Controller;
 use SilverStripe\Control\HTTPRequest;
+use SilverStripe\Control\HTTPResponse;
 use SilverStripe\Security\Member;
 
 /**
@@ -31,6 +32,7 @@ class ActionHandler extends Controller
      */
     private static $allowed_actions = [
         'addToList',
+        'addCartToList',
         'addToListAndRemoveFromCart',
         'addToCartAndRemoveFromList',
         'getLists',
@@ -93,6 +95,33 @@ class ActionHandler extends Controller
             MyAccountHolder::add_info_message($list->fieldLabel('AccountRequiredInfo'));
             $this->redirect(Tools::PageByIdentifierCode(MyAccountHolder::IDENTIFIER_MY_ACCOUNT_HOLDER)->Link());
         }
+    }
+    
+    /**
+     * Action to add all shopping cart product to a list.
+     * 
+     * @param HTTPRequest $request Request to check for product data
+     * 
+     * @return HTTPResponse
+     */
+    public function addCartToList(HTTPRequest $request) : HTTPResponse
+    {
+        $customer = Customer::currentUser();
+        if ($customer instanceof Member
+         && $customer->isRegisteredCustomer()
+        ) {
+            $list = $this->getListByRequest($request, $customer);
+            if ($list instanceof ProductList) {
+                foreach ($customer->getCart()->ShoppingCartPositions() as $position) {
+                    if ($position->Product()->canAddToList($customer)) {
+                        $list->addProduct($position->Product());
+                        $position->delete();
+                    }
+                }
+            }
+            return $this->redirect($list->Link());
+        }
+        return $this->redirectBack();
     }
     
     /*
@@ -193,7 +222,7 @@ class ActionHandler extends Controller
          && $customer->isRegisteredCustomer()
         ) {
             $params = $request->allParams();
-            $listID = $params['OtherID'];
+            $listID = (int) $params['OtherID'];
             if ($listID == 'new') {
                 $list = ProductList::create();
                 $list->MemberID = $customer->ID;

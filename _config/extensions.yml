@@ -7,6 +7,9 @@ SilverStripe\Security\Member:
 SilverCart\Model\Order\OrderPosition:
   extensions:
     - SilverCart\ProductLists\Extensions\Order\OrderPositionExtension
+SilverCart\Model\Order\ShoppingCart:
+  extensions:
+    - SilverCart\ProductLists\Extensions\Order\ShoppingCartExtension
 SilverCart\Model\Product\Product:
   extensions:
     - SilverCart\ProductLists\Extensions\Product\ProductExtension
