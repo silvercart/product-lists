@@ -32,22 +32,31 @@ class ProductListDeleteAction extends ProductListAction implements ProductListAc
      * @param ProductList $list   List to check permission for
      * @param Member      $member Member to check permission for
      * 
-     * @return void
+     * @return bool
      *
      * @author Sebastian Diel <sdiel@pixeltricks.de>
      * @since 26.04.2013
      */
-    public function canExecute(ProductList $list, Member $member = null)
+    public function canExecute(ProductList $list, Member $member = null) : bool
     {
         $canExecute = false;
+        if ($member === null) {
+            $member = Member::currentUser();
+        }
+        if ($member instanceof Member
+         && Config::AllowMultipleLists()
+         && $list->MemberID == $member->ID
+        ) {
+            $canExecute = true;
+        } elseif ($member instanceof Member
+               && !Config::AllowMultipleLists()
+               && $list->MemberID == $member->ID
+               && $member->ProductLists()->count() > 1
+               && !$list->IsDefault
+        ) {
+            $canExecute = true;
+        }
         if (Config::AllowMultipleLists()) {
-            if (is_null($member)) {
-                $member = Member::currentUser();
-            }
-            if ($member instanceof Member &&
-                $list->MemberID == $member->ID) {
-                $canExecute = true;
-            }
         }
         $this->extend('updateCanExecute', $canExecute);
         return $canExecute;
@@ -59,12 +68,12 @@ class ProductListDeleteAction extends ProductListAction implements ProductListAc
      * @param ProductList $list   List to check permission for
      * @param Member      $member Member to check permission for
      * 
-     * @return void
+     * @return bool
      *
      * @author Sebastian Diel <sdiel@pixeltricks.de>
      * @since 26.04.2013
      */
-    public function canView(ProductList $list, Member $member = null)
+    public function canView(ProductList $list, Member $member = null) : bool
     {
         return $this->canExecute($list, $member);
     }
@@ -79,12 +88,11 @@ class ProductListDeleteAction extends ProductListAction implements ProductListAc
      * @author Sebastian Diel <sdiel@pixeltricks.de>
      * @since 26.04.2013
      */
-    public function handleList(ProductList $list)
+    public function handleList(ProductList $list) : void
     {
         if ($this->canExecute($list)) {
             $list->delete();
             Controller::curr()->redirect(Controller::curr()->Link());
         }
     }
-    
 }

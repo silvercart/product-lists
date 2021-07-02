@@ -16,7 +16,7 @@
     <% end_if %>
     </section>
     <aside class="col-12 col-md-3">
-        <% if $CurrentRegisteredCustomer %>
+        <% if $CurrentRegisteredCustomer && $CurrentRegisteredCustomer.AllowMultipleProductLists %>
         <nav class="widget">
             <ul class="nav flex-column">
             <% loop $ProductLists %>

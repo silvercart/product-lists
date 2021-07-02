@@ -7,6 +7,7 @@ use SilverCart\Model\Customer\Customer;
 use SilverCart\Model\Pages\MyAccountHolder;
 use SilverCart\Model\Order\ShoppingCart;
 use SilverCart\Model\Product\Product;
+use SilverCart\ProductLists\Config\Config;
 use SilverCart\ProductLists\Model\Product\ProductList;
 use SilverStripe\Control\Controller;
 use SilverStripe\Control\HTTPRequest;
@@ -222,13 +223,16 @@ class ActionHandler extends Controller
          && $customer->isRegisteredCustomer()
         ) {
             $params = $request->allParams();
-            $listID = (int) $params['OtherID'];
-            if ($listID == 'new') {
+            $listID = $params['OtherID'];
+            if (!Config::AllowMultipleLists()) {
+                $listID = 0;
+            }
+            if ($listID === 'new') {
                 $list = ProductList::create();
                 $list->MemberID = $customer->ID;
                 $list->write();
             } else {
-                $list = $customer->ProductLists()->byID($listID);
+                $list = $customer->ProductLists()->byID((int) $listID);
                 if (is_null($list)) {
                     $list = $customer->getDefaultProductList();
                     if (is_null($list)) {
