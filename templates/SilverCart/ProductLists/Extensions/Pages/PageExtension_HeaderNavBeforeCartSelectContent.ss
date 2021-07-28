@@ -1,3 +1,4 @@
+<% if $CurrentPage.PageByIdentifierCode('SilvercartProductListPage').exists %>
 <% if $CurrentMember.AllowMultipleProductLists %>
 <div class="dropdown">
     <a id="product-list-dropdown" class="btn dropdown-toggle text-left" data-toggle="dropdown" title="<%t SilverCart\ProductLists\Model\Pages\ProductListPage.DEFAULT_TITLE 'My lists' %>">
@@ -25,4 +26,5 @@
     <span class="fa fa-heart text-muted"></span>
 </a>
     <% end_with %>
+<% end_if %>
 <% end_if %>

@@ -1,3 +1,4 @@
+<% if $CurrentPage.PageByIdentifierCode('SilvercartProductListPage').exists %>
 <% if $CurrentMember.AllowMultipleProductLists %>
     <% if $CurrentMember.isRegisteredCustomer %>
         <% with $Position.Product %>
@@ -42,4 +43,5 @@
         <% end_with %>
     <% end_if %>
 </div>
+<% end_if %>
 <% end_if %>
