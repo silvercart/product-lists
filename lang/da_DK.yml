@@ -1,0 +1,57 @@
+da_DK:
+    SilverCart:
+        GoToList: 'Gå til listen'
+        ProductAddedToListSingle: 'Produktet blev føjet til din liste.'
+    SilverCart\ProductLists\Model\Product\ProductList:
+        AccountRequired: 'For at tilføje produkter til en liste skal du logge ind eller registrere en konto. Klik her for at logge ind eller oprette en konto.'
+        AccountRequiredInfo: 'Du skal være logget ind for at bruge en observationsliste. Når du har logget ind eller er registreret, vil den valgte vare automatisk blive tilføjet til din observationsliste.'
+        AddThisProduct: 'Tilføj dette produkt til en liste'
+        My: Min
+        PLURALNAME: Lister
+        SINGULARNAME: Liste
+        PLURALNAME_SHORT: Lister
+        SINGULARNAME_SHORT: Liste
+        CreateNewList: 'Opret ny liste'
+        DUPLICATION: Kopier
+        EDIT: 'Rediger liste'
+        EDIT_SHORT: E
+        ShowLists: 'Vis lister'
+        SHOW_DETAILS: 'Vis detaljer'
+        SHOW_DETAILS_SHORT: Detaljer
+        ISDEFAULT: 'Brug som standard'
+        TITLE: Navn
+        TITLE_DEFAULT: 'Liste fra {date} ur'
+        TITLE_DEFAULT_DATEFORMAT: 'd.m.Y H:i'
+    SilverCart\ProductLists\Model\ProductListPosition:
+        PLURALNAME: Liste-positioner
+        SINGULARNAME: Liste-position
+    SilverCart\ProductLists\Model\Pages\ProductListPage:
+        PLURALNAME: Liste-sider
+        SINGULARNAME: Liste-side
+        DEFAULT_TITLE: 'Mine lister'
+        DEFAULT_URLSEGMENT: mine-lister
+        YOUR_LISTS: 'Dine lister'
+    SilverCart\ProductLists\Model\Pages\Includes\ProductListTable:
+        COL_COUNT: Produktantal
+        COL_CREATED: Oprettet
+        COL_LASTEDITED: 'Sidst ændret den'
+        COL_NAME: Navn
+        NO_LIST_AVAILABLE: 'Du har ingen lister endnu.'
+    SilverCart\ProductLists\Control\Actions\ProductListDeleteAction:
+        TITLE: Slet
+        BUTTONTITLE: 'Slet liste'
+        BUTTONTITLESHORT: '-'
+    SilverCart\ProductLists\Control\Actions\ProductListDuplicateAction:
+        TITLE: Duplikat
+        BUTTONTITLE: Duplikatsliste
+        BUTTONTITLESHORT: +
+    SilverCart\ProductLists\Control\Actions\ProductListSetAsDefaultAction:
+        TITLE: 'Brug som standard'
+        BUTTONTITLE: 'Brug liste som standard'
+        BUTTONTITLESHORT: D.
+    SilverCart\ProductLists\Control\Actions\ProductListConvertToCartAction:
+        TITLE: 'Tilføj til indkøbskurv'
+        BUTTONTITLE: 'Føj denne liste til indkøbskurven'
+        BUTTONTITLESHORT: Indkøbsvogn
+    SilverCart\ProductLists:
+        ProductsOnYourList: 'Artikler på din observationsliste'
