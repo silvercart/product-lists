@@ -20,7 +20,7 @@ da_DK:
         SHOW_DETAILS_SHORT: Detaljer
         ISDEFAULT: 'Brug som standard'
         TITLE: Navn
-        TITLE_DEFAULT: 'Liste fra {date} ur'
+        TITLE_DEFAULT: 'Liste fra {date} klokken'
         TITLE_DEFAULT_DATEFORMAT: 'd.m.Y H:i'
     SilverCart\ProductLists\Model\ProductListPosition:
         PLURALNAME: Liste-positioner
