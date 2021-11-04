@@ -1,57 +1,57 @@
 nl:
-    SilverCart:
-        GoToList: 'Ga naar de lijst'
-        ProductAddedToListSingle: 'Het product is toegevoegd aan uw lijst " {list} ".'
-    SilverCart\ProductLists\Model\Product\ProductList:
-        AccountRequired: 'U moet ingelogd zijn om een lijst te gebruiken. Klik hier om in te loggen of te registreren.'
-        AccountRequiredInfo: 'U moet ingelogd zijn om een lijst te kunnen gebruiken. Na het inloggen of registreren wordt het geselecteerde item automatisch toegevoegd aan uw lijst.'
-        AddThisProduct: 'Voeg dit product toe aan een lijst'
-        My: Mijn
-        PLURALNAME: Lijst
-        SINGULARNAME: Lijst
-        PLURALNAME_SHORT: Lijsten
-        SINGULARNAME_SHORT: Lijst
-        CreateNewList: 'Nieuwe lijst aanmaken'
-        DUPLICATION: Kopieer
-        EDIT: 'Lijst bewerken'
-        EDIT_SHORT: B
-        ShowLists: 'Lijsten weergeven'
-        SHOW_DETAILS: 'Details weergeven'
-        SHOW_DETAILS_SHORT: Details
-        ISDEFAULT: 'Gebruiken als standaard'
-        TITLE: Naam
-        TITLE_DEFAULT: 'Lijst vanaf {date} uur'
-        TITLE_DEFAULT_DATEFORMAT: 'd.m.Y H:i'
-    SilverCart\ProductLists\Model\ProductListPosition:
-        PLURALNAME: Lijstposities
-        SINGULARNAME: Lijstpositie
-    SilverCart\ProductLists\Model\Pages\ProductListPage:
-        PLURALNAME: 'Bladwijzerpagina''s'
-        SINGULARNAME: 'Bekijk de pagina met favorieten'
-        DEFAULT_TITLE: 'Mijn watchlists'
-        DEFAULT_URLSEGMENT: Lijsten
-        YOUR_LISTS: 'Mijn lijsten'
-    SilverCart\ProductLists\Model\Pages\Includes\ProductListTable:
-        COL_COUNT: 'Hoeveelheid Artikelen'
-        COL_CREATED: 'Opgesteld op'
-        COL_LASTEDITED: 'laatst gewijzigd om'
-        COL_NAME: Naam
-        NO_LIST_AVAILABLE: 'Er zijn nog geen lijsten beschikbaar.'
-    SilverCart\ProductLists\Control\Actions\ProductListDeleteAction:
-        TITLE: Verwijder
-        BUTTONTITLE: 'Lijst verwijderen'
-        BUTTONTITLESHORT: '-'
-    SilverCart\ProductLists\Control\Actions\ProductListDuplicateAction:
-        TITLE: Dupliceren
-        BUTTONTITLE: Dupliceren
-        BUTTONTITLESHORT: +
-    SilverCart\ProductLists\Control\Actions\ProductListSetAsDefaultAction:
-        TITLE: 'Gebruiken als standaard'
-        BUTTONTITLE: 'Gebruik lijst als standaard'
-        BUTTONTITLESHORT: D
-    SilverCart\ProductLists\Control\Actions\ProductListConvertToCartAction:
-        TITLE: 'Toevoegen aan winkelwagen'
-        BUTTONTITLE: 'Lijst toevoegen aan winkelwagen'
-        BUTTONTITLESHORT: Winkelwagen
-    SilverCart\ProductLists:
-        ProductsOnYourList: 'Artikelen op uw lijst'
+  SilverCart:
+    GoToList: 'Ga naar de lijst'
+    ProductAddedToListSingle: 'Het product is toegevoegd aan uw lijst " {list} ".'
+  SilverCart\ProductLists:
+    ProductsOnYourList: 'Artikelen op uw lijst'
+  SilverCart\ProductLists\Control\Actions\ProductListConvertToCartAction:
+    BUTTONTITLE: 'Lijst toevoegen aan winkelwagen'
+    BUTTONTITLESHORT: Winkelwagen
+    TITLE: 'Toevoegen aan winkelwagen'
+  SilverCart\ProductLists\Control\Actions\ProductListDeleteAction:
+    BUTTONTITLE: 'Lijst verwijderen'
+    BUTTONTITLESHORT: '-'
+    TITLE: Verwijder
+  SilverCart\ProductLists\Control\Actions\ProductListDuplicateAction:
+    BUTTONTITLE: Dupliceren
+    BUTTONTITLESHORT: +
+    TITLE: Dupliceren
+  SilverCart\ProductLists\Control\Actions\ProductListSetAsDefaultAction:
+    BUTTONTITLE: 'Gebruik lijst als standaard'
+    BUTTONTITLESHORT: D
+    TITLE: 'Gebruiken als standaard'
+  SilverCart\ProductLists\Model\Pages\Includes\ProductListTable:
+    COL_COUNT: 'Hoeveelheid Artikelen'
+    COL_CREATED: 'Opgesteld op'
+    COL_LASTEDITED: 'laatst gewijzigd om'
+    COL_NAME: Naam
+    NO_LIST_AVAILABLE: 'Er zijn nog geen lijsten beschikbaar.'
+  SilverCart\ProductLists\Model\Pages\ProductListPage:
+    DEFAULT_TITLE: 'Mijn watchlists'
+    DEFAULT_URLSEGMENT: Lijsten
+    PLURALNAME: 'Bladwijzerpagina''s'
+    SINGULARNAME: 'Bekijk de pagina met favorieten'
+    YOUR_LISTS: 'Mijn lijsten'
+  SilverCart\ProductLists\Model\ProductListPosition:
+    PLURALNAME: Lijstposities
+    SINGULARNAME: Lijstpositie
+  SilverCart\ProductLists\Model\Product\ProductList:
+    AccountRequired: 'U moet ingelogd zijn om een lijst te gebruiken. Klik hier om in te loggen of te registreren.'
+    AccountRequiredInfo: 'U moet ingelogd zijn om een lijst te kunnen gebruiken. Na het inloggen of registreren wordt het geselecteerde item automatisch toegevoegd aan uw lijst.'
+    AddThisProduct: 'Voeg dit product toe aan een lijst'
+    CreateNewList: 'Nieuwe lijst aanmaken'
+    DUPLICATION: Kopieer
+    EDIT: 'Lijst bewerken'
+    EDIT_SHORT: B
+    ISDEFAULT: 'Gebruiken als standaard'
+    My: Mijn
+    PLURALNAME: Lijst
+    PLURALNAME_SHORT: Lijsten
+    SHOW_DETAILS: 'Details weergeven'
+    SHOW_DETAILS_SHORT: Details
+    SINGULARNAME: Lijst
+    SINGULARNAME_SHORT: Lijst
+    ShowLists: 'Lijsten weergeven'
+    TITLE: Naam
+    TITLE_DEFAULT: 'Lijst vanaf {date} uur'
+    TITLE_DEFAULT_DATEFORMAT: 'd.m.Y H:i'

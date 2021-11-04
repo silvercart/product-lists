@@ -1,61 +1,61 @@
 it:
-    SilverCart:
-        GoToList: 'Vai ai preferiti'
-        ProductAddedToList: 'L''articolo è stato aggiunto alla lista dei preferiti "{list}".'
-        ProductAddedToListSingle: 'L''articolo è stato aggiunto a preferiti.'
-    SilverCart\ProductLists:
-        ProductsOnYourList: 'Articolo aggiunto alla lista dei preferiti'
-    SilverCart\ProductLists\Model\Product\ProductList:
-        AccountRequired: 'Per utilizzare una lista preferiti, è necessario aver effettuato l''accesso o esserti registrato. Clicca qui per accedere o procedere alla tua registrazione.'
-        AccountRequiredInfo: 'Per aggiungere prodotti ad un elenco, è necessario accedere o registrarsi al nostro Portale Acquisti. Dopo aver effettuato l''accesso, il prodotto selezionato verrà aggiunto automaticamente alla tua lista.'
-        AddThisProduct: 'Aggiungi alla lista'
-        AddToList: 'Aggiungi alla lista'
-        RememberForLater: 'Ricorda per dopo'
-        ThisListIsEmpty: 'Questa lista è vuota.'
-        My: 'Il mio'
-        PLURALNAME: Liste
-        SINGULARNAME: Lista
-        PLURALNAME_SHORT: Liste
-        SINGULARNAME_SHORT: Lista
-        CreateNewList: 'Creare una nuova lista'
-        DUPLICATION: Copia
-        EDIT: 'Modifica lista'
-        EDIT_SHORT: E
-        ShowLists: 'Mostra liste'
-        SHOW_DETAILS: 'Mostra dettagli'
-        SHOW_DETAILS_SHORT: Dettagli
-        ISDEFAULT: 'Utilizzare come standard'
-        TITLE: Nome
-        TITLE_DEFAULT: 'Lista delle {date}'
-        TITLE_DEFAULT_DATEFORMAT: 'd.m.Y H:i'
-    SilverCart\ProductLists\Model\ProductListPosition:
-        PLURALNAME: 'Posizioni elenco preferiti'
-        SINGULARNAME: 'Posizione elenco preferiti'
-    SilverCart\ProductLists\Model\Pages\ProductListPage:
-        PLURALNAME: 'Pagine elenco preferiti'
-        SINGULARNAME: 'Pagina elenco preferiti'
-        DEFAULT_TITLE: 'I miei preferiti'
-        DEFAULT_URLSEGMENT: Liste
-        YOUR_LISTS: 'I tuoi preferiti'
-    SilverCart\ProductLists\Model\Pages\Includes\ProductListTable:
-        COL_COUNT: 'Numero di articoli'
-        COL_CREATED: 'Creato il'
-        COL_LASTEDITED: 'Ultima modifica il'
-        COL_NAME: Nome
-        NO_LIST_AVAILABLE: 'Non hai ancora aggiunto alcun articolo.'
-    SilverCart\ProductLists\Control\Actions\ProductListDeleteAction:
-        TITLE: Cancellare
-        BUTTONTITLE: 'Cancella lista'
-        BUTTONTITLESHORT: '-'
-    SilverCart\ProductLists\Control\Actions\ProductListDuplicateAction:
-        TITLE: Duplicare
-        BUTTONTITLE: 'Duplicare la lista'
-        BUTTONTITLESHORT: +
-    SilverCart\ProductLists\Control\Actions\ProductListSetAsDefaultAction:
-        TITLE: 'Usa come predefinito'
-        BUTTONTITLE: 'Usa lista come predefinita'
-        BUTTONTITLESHORT: D
-    SilverCart\ProductLists\Control\Actions\ProductListConvertToCartAction:
-        TITLE: 'Aggiungi al carrello'
-        BUTTONTITLE: 'Aggiungi lista al carrello'
-        BUTTONTITLESHORT: Carrello
+  SilverCart:
+    GoToList: 'Vai ai preferiti'
+    ProductAddedToList: 'L''articolo è stato aggiunto alla lista dei preferiti "{list}".'
+    ProductAddedToListSingle: 'L''articolo è stato aggiunto a preferiti.'
+  SilverCart\ProductLists:
+    ProductsOnYourList: 'Articolo aggiunto alla lista dei preferiti'
+  SilverCart\ProductLists\Control\Actions\ProductListConvertToCartAction:
+    BUTTONTITLE: 'Aggiungi lista al carrello'
+    BUTTONTITLESHORT: Carrello
+    TITLE: 'Aggiungi al carrello'
+  SilverCart\ProductLists\Control\Actions\ProductListDeleteAction:
+    BUTTONTITLE: 'Cancella lista'
+    BUTTONTITLESHORT: '-'
+    TITLE: Cancellare
+  SilverCart\ProductLists\Control\Actions\ProductListDuplicateAction:
+    BUTTONTITLE: 'Duplicare la lista'
+    BUTTONTITLESHORT: +
+    TITLE: Duplicare
+  SilverCart\ProductLists\Control\Actions\ProductListSetAsDefaultAction:
+    BUTTONTITLE: 'Usa lista come predefinita'
+    BUTTONTITLESHORT: D
+    TITLE: 'Usa come predefinito'
+  SilverCart\ProductLists\Model\Pages\Includes\ProductListTable:
+    COL_COUNT: 'Numero di articoli'
+    COL_CREATED: 'Creato il'
+    COL_LASTEDITED: 'Ultima modifica il'
+    COL_NAME: Nome
+    NO_LIST_AVAILABLE: 'Non hai ancora aggiunto alcun articolo.'
+  SilverCart\ProductLists\Model\Pages\ProductListPage:
+    DEFAULT_TITLE: 'I miei preferiti'
+    DEFAULT_URLSEGMENT: Liste
+    PLURALNAME: 'Pagine elenco preferiti'
+    SINGULARNAME: 'Pagina elenco preferiti'
+    YOUR_LISTS: 'I tuoi preferiti'
+  SilverCart\ProductLists\Model\ProductListPosition:
+    PLURALNAME: 'Posizioni elenco preferiti'
+    SINGULARNAME: 'Posizione elenco preferiti'
+  SilverCart\ProductLists\Model\Product\ProductList:
+    AccountRequired: 'Per utilizzare una lista preferiti, è necessario aver effettuato l''accesso o esserti registrato. Clicca qui per accedere o procedere alla tua registrazione.'
+    AccountRequiredInfo: 'Per aggiungere prodotti ad un elenco, è necessario accedere o registrarsi al nostro Portale Acquisti. Dopo aver effettuato l''accesso, il prodotto selezionato verrà aggiunto automaticamente alla tua lista.'
+    AddThisProduct: 'Aggiungi alla lista'
+    AddToList: 'Aggiungi alla lista'
+    CreateNewList: 'Creare una nuova lista'
+    DUPLICATION: Copia
+    EDIT: 'Modifica lista'
+    EDIT_SHORT: E
+    ISDEFAULT: 'Utilizzare come standard'
+    My: 'Il mio'
+    PLURALNAME: Liste
+    PLURALNAME_SHORT: Liste
+    RememberForLater: 'Ricorda per dopo'
+    SHOW_DETAILS: 'Mostra dettagli'
+    SHOW_DETAILS_SHORT: Dettagli
+    SINGULARNAME: Lista
+    SINGULARNAME_SHORT: Lista
+    ShowLists: 'Mostra liste'
+    TITLE: Nome
+    TITLE_DEFAULT: 'Lista delle {date}'
+    TITLE_DEFAULT_DATEFORMAT: 'd.m.Y H:i'
+    ThisListIsEmpty: 'Questa lista è vuota.'
