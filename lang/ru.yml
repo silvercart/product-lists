@@ -1,0 +1,57 @@
+ru:
+  SilverCart:
+    GoToList: 'В список наблюдения'
+    ProductAddedToListSingle: 'Товар был добавлен в список просмотра.'
+  SilverCart\ProductLists:
+    ProductsOnYourList: 'Статьи в вашем списке наблюдения'
+  SilverCart\ProductLists\Control\Actions\ProductListConvertToCartAction:
+    BUTTONTITLE: 'Добавить список в корзину'
+    BUTTONTITLESHORT: Корзина
+    TITLE: 'Добавить в корзину'
+  SilverCart\ProductLists\Control\Actions\ProductListDeleteAction:
+    BUTTONTITLE: 'Удалить список'
+    BUTTONTITLESHORT: '-'
+    TITLE: Удалить
+  SilverCart\ProductLists\Control\Actions\ProductListDuplicateAction:
+    BUTTONTITLE: 'Дублирующий список'
+    BUTTONTITLESHORT: +
+    TITLE: Дубликат
+  SilverCart\ProductLists\Control\Actions\ProductListSetAsDefaultAction:
+    BUTTONTITLE: 'Использовать список по умолчанию'
+    BUTTONTITLESHORT: D
+    TITLE: 'Использовать по умолчанию'
+  SilverCart\ProductLists\Model\Pages\Includes\ProductListTable:
+    COL_COUNT: 'Количество статей'
+    COL_CREATED: 'Создано на'
+    COL_LASTEDITED: 'Последнее изменение'
+    COL_NAME: Имя
+    NO_LIST_AVAILABLE: 'Пока нет доступных списков наблюдения.'
+  SilverCart\ProductLists\Model\Pages\ProductListPage:
+    DEFAULT_TITLE: 'Мои списки наблюдения'
+    DEFAULT_URLSEGMENT: слушать
+    PLURALNAME: 'Страницы списка заметок'
+    SINGULARNAME: 'Страница списка заметок'
+    YOUR_LISTS: 'Ваши списки наблюдения'
+  SilverCart\ProductLists\Model\ProductListPosition:
+    PLURALNAME: 'Элементы списка наблюдения'
+    SINGULARNAME: 'Элемент списка наблюдения'
+  SilverCart\ProductLists\Model\Product\ProductList:
+    AccountRequired: 'Вы должны войти в систему, чтобы использовать список наблюдения. На вход в систему?'
+    AccountRequiredInfo: 'Вы должны войти в систему, чтобы использовать список наблюдения. После входа в систему или регистрации выбранный товар будет автоматически добавлен в ваш список просмотра.'
+    AddThisProduct: 'Закладка этого элемента в списке'
+    CreateNewList: 'Создать новый список'
+    DUPLICATION: Копировать
+    EDIT: 'Список редактирования'
+    EDIT_SHORT: B
+    ISDEFAULT: 'Использовать по умолчанию'
+    My: Мой
+    PLURALNAME: 'Списки наблюдения'
+    PLURALNAME_SHORT: Слушать
+    SHOW_DETAILS: 'Показать подробности'
+    SHOW_DETAILS_SHORT: Подробности
+    SINGULARNAME: 'Сторожевой список'
+    SINGULARNAME_SHORT: Список
+    ShowLists: 'Показать списки'
+    TITLE: Имя
+    TITLE_DEFAULT: 'Список из {дата} часов'
+    TITLE_DEFAULT_DATEFORMAT: 'd.m.Y H:i'

@@ -1,0 +1,57 @@
+es:
+  SilverCart:
+    GoToList: 'A la lista de vigilancia'
+    ProductAddedToListSingle: 'El artículo se ha añadido a la lista de vigilancia.'
+  SilverCart\ProductLists:
+    ProductsOnYourList: 'Artículos en su lista de seguimiento'
+  SilverCart\ProductLists\Control\Actions\ProductListConvertToCartAction:
+    BUTTONTITLE: 'Añadir lista a la cesta de la compra'
+    BUTTONTITLESHORT: 'Cesta de la compra'
+    TITLE: 'Añadir a la cesta de la compra'
+  SilverCart\ProductLists\Control\Actions\ProductListDeleteAction:
+    BUTTONTITLE: 'Borrar la lista'
+    BUTTONTITLESHORT: '-'
+    TITLE: Borrar
+  SilverCart\ProductLists\Control\Actions\ProductListDuplicateAction:
+    BUTTONTITLE: 'Lista de duplicados'
+    BUTTONTITLESHORT: +
+    TITLE: Duplicado
+  SilverCart\ProductLists\Control\Actions\ProductListSetAsDefaultAction:
+    BUTTONTITLE: 'Utilizar la lista por defecto'
+    BUTTONTITLESHORT: D
+    TITLE: 'Utilizar por defecto'
+  SilverCart\ProductLists\Model\Pages\Includes\ProductListTable:
+    COL_COUNT: 'Artículos de cantidad'
+    COL_CREATED: 'Creado el'
+    COL_LASTEDITED: 'Modificado por última vez en'
+    COL_NAME: Nombre
+    NO_LIST_AVAILABLE: 'Todavía no hay listas de vigilancia disponibles.'
+  SilverCart\ProductLists\Model\Pages\ProductListPage:
+    DEFAULT_TITLE: 'Mis listas de vigilancia'
+    DEFAULT_URLSEGMENT: escuchar
+    PLURALNAME: 'Páginas de la lista de notas'
+    SINGULARNAME: 'Página de la lista de notas'
+    YOUR_LISTS: 'Sus listas de vigilancia'
+  SilverCart\ProductLists\Model\ProductListPosition:
+    PLURALNAME: 'Elementos de la lista de vigilancia'
+    SINGULARNAME: 'Elemento de la lista de vigilancia'
+  SilverCart\ProductLists\Model\Product\ProductList:
+    AccountRequired: 'Debe estar conectado para utilizar una lista de vigilancia. ¿A la entrada?'
+    AccountRequiredInfo: 'Debe estar conectado para utilizar una lista de vigilancia. Después de iniciar sesión o registrarse, el artículo seleccionado se añadirá automáticamente a su lista de vigilancia.'
+    AddThisProduct: 'Marcar este elemento en una lista'
+    CreateNewList: 'Crear una nueva lista'
+    DUPLICATION: Copiar
+    EDIT: 'Editar lista'
+    EDIT_SHORT: B
+    ISDEFAULT: 'Utilizar por defecto'
+    My: Mi
+    PLURALNAME: 'Listas de vigilancia'
+    PLURALNAME_SHORT: Escuche
+    SHOW_DETAILS: 'Mostrar detalles'
+    SHOW_DETAILS_SHORT: Detalles
+    SINGULARNAME: 'Lista de vigilancia'
+    SINGULARNAME_SHORT: Lista
+    ShowLists: 'Mostrar listas'
+    TITLE: Nombre
+    TITLE_DEFAULT: 'Lista de {fecha} reloj'
+    TITLE_DEFAULT_DATEFORMAT: 'd.m.Y H:i'

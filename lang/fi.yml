@@ -1,0 +1,57 @@
+fi:
+  SilverCart:
+    GoToList: Seurantalistalle
+    ProductAddedToListSingle: 'Tuote on lisätty tarkkailulistalle.'
+  SilverCart\ProductLists:
+    ProductsOnYourList: 'Seurantalistallasi olevat artikkelit'
+  SilverCart\ProductLists\Control\Actions\ProductListConvertToCartAction:
+    BUTTONTITLE: 'Lisää lista ostoskoriin'
+    BUTTONTITLESHORT: Ostoskori
+    TITLE: 'Lisää ostoskoriin'
+  SilverCart\ProductLists\Control\Actions\ProductListDeleteAction:
+    BUTTONTITLE: 'Poista luettelo'
+    BUTTONTITLESHORT: '-'
+    TITLE: Poista
+  SilverCart\ProductLists\Control\Actions\ProductListDuplicateAction:
+    BUTTONTITLE: Kaksoisluettelo
+    BUTTONTITLESHORT: +
+    TITLE: Kaksoiskappaleet
+  SilverCart\ProductLists\Control\Actions\ProductListSetAsDefaultAction:
+    BUTTONTITLE: 'Käytä luetteloa oletuksena'
+    BUTTONTITLESHORT: D
+    TITLE: 'Käytä oletuksena'
+  SilverCart\ProductLists\Model\Pages\Includes\ProductListTable:
+    COL_COUNT: 'Määrä Artikkelit'
+    COL_CREATED: Luotu
+    COL_LASTEDITED: 'Viimeksi muokattu'
+    COL_NAME: Nimi
+    NO_LIST_AVAILABLE: 'Tarkkailulistoja ei ole vielä saatavilla.'
+  SilverCart\ProductLists\Model\Pages\ProductListPage:
+    DEFAULT_TITLE: 'Minun tarkkailulistani'
+    DEFAULT_URLSEGMENT: kuuntele
+    PLURALNAME: 'Muistilistan sivut'
+    SINGULARNAME: 'Muistilistan sivu'
+    YOUR_LISTS: Seurantalistasi
+  SilverCart\ProductLists\Model\ProductListPosition:
+    PLURALNAME: 'Seurantaluettelon kohteet'
+    SINGULARNAME: 'Seurantalistan kohde'
+  SilverCart\ProductLists\Model\Product\ProductList:
+    AccountRequired: 'Sinun täytyy olla kirjautuneena sisään, jotta voit käyttää tarkkailulistaa. Kirjautumiseen?'
+    AccountRequiredInfo: 'Sinun täytyy olla kirjautuneena sisään, jotta voit käyttää tarkkailulistaa. Kun olet kirjautunut sisään tai rekisteröitynyt, valittu tuote lisätään automaattisesti seurantalistallesi.'
+    AddThisProduct: 'Kirjanmerkki tämä kohde listalla'
+    CreateNewList: 'Luo uusi luettelo'
+    DUPLICATION: Kopioi
+    EDIT: 'Muokkaa luetteloa'
+    EDIT_SHORT: B
+    ISDEFAULT: 'Käytä oletuksena'
+    My: Minun
+    PLURALNAME: Seurantalistat
+    PLURALNAME_SHORT: Kuuntele
+    SHOW_DETAILS: 'Näytä tiedot'
+    SHOW_DETAILS_SHORT: Yksityiskohdat
+    SINGULARNAME: Seurantalista
+    SINGULARNAME_SHORT: Luettelo
+    ShowLists: 'Näytä luettelot'
+    TITLE: Nimi
+    TITLE_DEFAULT: 'Luettelo alkaen {päivämäärä} kello'
+    TITLE_DEFAULT_DATEFORMAT: 'd.m.Y H:i'

@@ -1,0 +1,57 @@
+cs:
+  SilverCart:
+    GoToList: 'Na seznam sledovaných osob'
+    ProductAddedToListSingle: 'Položka byla přidána na seznam sledovaných.'
+  SilverCart\ProductLists:
+    ProductsOnYourList: 'Články na vašem seznamu sledovaných článků'
+  SilverCart\ProductLists\Control\Actions\ProductListConvertToCartAction:
+    BUTTONTITLE: 'Přidat seznam do nákupního košíku'
+    BUTTONTITLESHORT: 'Nákupní košík'
+    TITLE: 'Přidat do nákupního košíku'
+  SilverCart\ProductLists\Control\Actions\ProductListDeleteAction:
+    BUTTONTITLE: 'Odstranit seznam'
+    BUTTONTITLESHORT: '-'
+    TITLE: Odstranit
+  SilverCart\ProductLists\Control\Actions\ProductListDuplicateAction:
+    BUTTONTITLE: 'Duplicitní seznam'
+    BUTTONTITLESHORT: +
+    TITLE: Duplikát
+  SilverCart\ProductLists\Control\Actions\ProductListSetAsDefaultAction:
+    BUTTONTITLE: 'Použít seznam jako výchozí'
+    BUTTONTITLESHORT: D
+    TITLE: 'Použít jako výchozí'
+  SilverCart\ProductLists\Model\Pages\Includes\ProductListTable:
+    COL_COUNT: 'Množství Články'
+    COL_CREATED: 'Vytvořeno dne'
+    COL_LASTEDITED: 'Naposledy upraveno dne'
+    COL_NAME: Název
+    NO_LIST_AVAILABLE: 'Zatím nejsou k dispozici žádné sledovací seznamy.'
+  SilverCart\ProductLists\Model\Pages\ProductListPage:
+    DEFAULT_TITLE: 'Moje seznamy sledovaných položek'
+    DEFAULT_URLSEGMENT: 'poslechněte si'
+    PLURALNAME: 'Stránky se seznamem poznámek'
+    SINGULARNAME: 'Stránka se seznamem poznámek'
+    YOUR_LISTS: 'Vaše seznamy sledovaných osob'
+  SilverCart\ProductLists\Model\ProductListPosition:
+    PLURALNAME: 'Položky sledovaného seznamu'
+    SINGULARNAME: 'Položka sledovaného seznamu'
+  SilverCart\ProductLists\Model\Product\ProductList:
+    AccountRequired: 'Chcete-li použít seznam sledovaných položek, musíte být přihlášeni. K přihlášení?'
+    AccountRequiredInfo: 'Chcete-li použít seznam sledovaných položek, musíte být přihlášeni. Po přihlášení nebo registraci se vybraná položka automaticky přidá do seznamu sledovaných položek.'
+    AddThisProduct: 'Záložka této položky v seznamu'
+    CreateNewList: 'Vytvořit nový seznam'
+    DUPLICATION: Kopírovat
+    EDIT: 'Upravit seznam'
+    EDIT_SHORT: B
+    ISDEFAULT: 'Použít jako výchozí'
+    My: Moje
+    PLURALNAME: 'Seznamy sledovaných osob'
+    PLURALNAME_SHORT: Poslouchejte
+    SHOW_DETAILS: 'Zobrazit podrobnosti'
+    SHOW_DETAILS_SHORT: 'Podrobnosti na'
+    SINGULARNAME: 'Seznam sledování'
+    SINGULARNAME_SHORT: Seznam
+    ShowLists: 'Zobrazit seznamy'
+    TITLE: Název
+    TITLE_DEFAULT: 'Seznam od {date} clock'
+    TITLE_DEFAULT_DATEFORMAT: 'd.m.Y H:i'

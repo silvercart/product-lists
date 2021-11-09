@@ -1,0 +1,57 @@
+en_ZA:
+  SilverCart:
+    GoToList: 'To the watchlist'
+    ProductAddedToListSingle: 'The item has been added to the watch list.'
+  SilverCart\ProductLists:
+    ProductsOnYourList: 'Articles on your watchlist'
+  SilverCart\ProductLists\Control\Actions\ProductListConvertToCartAction:
+    BUTTONTITLE: 'Add list to shopping cart'
+    BUTTONTITLESHORT: 'Shopping cart'
+    TITLE: 'Add to shopping cart'
+  SilverCart\ProductLists\Control\Actions\ProductListDeleteAction:
+    BUTTONTITLE: 'Delete list'
+    BUTTONTITLESHORT: '-'
+    TITLE: Delete
+  SilverCart\ProductLists\Control\Actions\ProductListDuplicateAction:
+    BUTTONTITLE: 'Duplicate list'
+    BUTTONTITLESHORT: +
+    TITLE: Duplicate
+  SilverCart\ProductLists\Control\Actions\ProductListSetAsDefaultAction:
+    BUTTONTITLE: 'Use list as default'
+    BUTTONTITLESHORT: D
+    TITLE: 'Use as default'
+  SilverCart\ProductLists\Model\Pages\Includes\ProductListTable:
+    COL_COUNT: 'Quantity Articles'
+    COL_CREATED: 'Created on'
+    COL_LASTEDITED: 'Last modified on'
+    COL_NAME: Name
+    NO_LIST_AVAILABLE: 'No watch lists available yet.'
+  SilverCart\ProductLists\Model\Pages\ProductListPage:
+    DEFAULT_TITLE: 'My watch lists'
+    DEFAULT_URLSEGMENT: listen
+    PLURALNAME: 'Memo list pages'
+    SINGULARNAME: 'Memo list page'
+    YOUR_LISTS: 'Your watch lists'
+  SilverCart\ProductLists\Model\ProductListPosition:
+    PLURALNAME: 'Watchlist items'
+    SINGULARNAME: 'Watchlist item'
+  SilverCart\ProductLists\Model\Product\ProductList:
+    AccountRequired: 'You must be logged in to use a watch list. To the login?'
+    AccountRequiredInfo: 'You must be logged in to use a watch list. After logging in or registering, the selected item will automatically be added to your watch list.'
+    AddThisProduct: 'Bookmark this item on a list'
+    CreateNewList: 'Create new list'
+    DUPLICATION: Copy
+    EDIT: 'Edit list'
+    EDIT_SHORT: B
+    ISDEFAULT: 'Use as default'
+    My: My
+    PLURALNAME: 'Watch lists'
+    PLURALNAME_SHORT: Listen
+    SHOW_DETAILS: 'Show details'
+    SHOW_DETAILS_SHORT: Details
+    SINGULARNAME: Watchlist
+    SINGULARNAME_SHORT: List
+    ShowLists: 'Show lists'
+    TITLE: Name
+    TITLE_DEFAULT: 'List from {date} clock'
+    TITLE_DEFAULT_DATEFORMAT: 'd.m.Y H:i'

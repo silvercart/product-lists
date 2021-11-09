@@ -1,0 +1,57 @@
+pl:
+  SilverCart:
+    GoToList: 'Do listy obserwacyjnej'
+    ProductAddedToListSingle: 'Pozycja została dodana do listy obserwowanych.'
+  SilverCart\ProductLists:
+    ProductsOnYourList: 'Artykuły na Twojej liście obserwacyjnej'
+  SilverCart\ProductLists\Control\Actions\ProductListConvertToCartAction:
+    BUTTONTITLE: 'Dodaj listę do koszyka'
+    BUTTONTITLESHORT: 'Koszyk na zakupy'
+    TITLE: 'Dodaj do koszyka'
+  SilverCart\ProductLists\Control\Actions\ProductListDeleteAction:
+    BUTTONTITLE: 'Usuń listę'
+    BUTTONTITLESHORT: '-'
+    TITLE: Usuń
+  SilverCart\ProductLists\Control\Actions\ProductListDuplicateAction:
+    BUTTONTITLE: 'Lista duplikatów'
+    BUTTONTITLESHORT: +
+    TITLE: Duplikat
+  SilverCart\ProductLists\Control\Actions\ProductListSetAsDefaultAction:
+    BUTTONTITLE: 'Użyj listy jako domyślnej'
+    BUTTONTITLESHORT: D
+    TITLE: 'Użyj jako domyślnego'
+  SilverCart\ProductLists\Model\Pages\Includes\ProductListTable:
+    COL_COUNT: 'Ilość Artykuły'
+    COL_CREATED: 'Utworzony w dniu'
+    COL_LASTEDITED: 'Ostatnio zmodyfikowano dnia'
+    COL_NAME: Nazwa
+    NO_LIST_AVAILABLE: 'Nie ma jeszcze dostępnych list obserwacyjnych.'
+  SilverCart\ProductLists\Model\Pages\ProductListPage:
+    DEFAULT_TITLE: 'Moje listy obserwacyjne'
+    DEFAULT_URLSEGMENT: posłuchaj
+    PLURALNAME: 'Strony z wykazem notatek'
+    SINGULARNAME: 'Strona z listą notatek'
+    YOUR_LISTS: 'Twoje listy obserwacyjne'
+  SilverCart\ProductLists\Model\ProductListPosition:
+    PLURALNAME: 'Pozycje listy obserwacyjnej'
+    SINGULARNAME: 'Pozycja na liście obserwacyjnej'
+  SilverCart\ProductLists\Model\Product\ProductList:
+    AccountRequired: 'Musisz być zalogowany, aby korzystać z listy obserwowanych. Do logowania?'
+    AccountRequiredInfo: 'Musisz być zalogowany, aby korzystać z listy obserwowanych. Po zalogowaniu się lub rejestracji, wybrany przedmiot zostanie automatycznie dodany do listy obserwowanych.'
+    AddThisProduct: 'Dodaj tę pozycję do listy'
+    CreateNewList: 'Utwórz nową listę'
+    DUPLICATION: Kopia
+    EDIT: 'Edytuj listę'
+    EDIT_SHORT: B
+    ISDEFAULT: 'Użyj jako domyślnego'
+    My: Mój
+    PLURALNAME: 'Listy obserwacyjne'
+    PLURALNAME_SHORT: Słuchaj
+    SHOW_DETAILS: 'Pokaż szczegóły'
+    SHOW_DETAILS_SHORT: Szczegóły
+    SINGULARNAME: 'Lista obserwacyjna'
+    SINGULARNAME_SHORT: Lista
+    ShowLists: 'Pokaż listy'
+    TITLE: Nazwa
+    TITLE_DEFAULT: 'Lista z {data} zegar'
+    TITLE_DEFAULT_DATEFORMAT: 'd.m.Y H:i'

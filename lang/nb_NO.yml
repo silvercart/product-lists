@@ -1,0 +1,57 @@
+nb_NO:
+  SilverCart:
+    GoToList: 'Til overvåkningsliste'
+    ProductAddedToListSingle: 'Elementet er lagt til overvåkningslisten.'
+  SilverCart\ProductLists:
+    ProductsOnYourList: 'Element på overvåkningslisten din'
+  SilverCart\ProductLists\Control\Actions\ProductListConvertToCartAction:
+    BUTTONTITLE: 'Legg listen i handlekurven'
+    BUTTONTITLESHORT: handlevogn
+    TITLE: 'Legg i handlekurv'
+  SilverCart\ProductLists\Control\Actions\ProductListDeleteAction:
+    BUTTONTITLE: 'Slett liste'
+    BUTTONTITLESHORT: '-'
+    TITLE: Slukke
+  SilverCart\ProductLists\Control\Actions\ProductListDuplicateAction:
+    BUTTONTITLE: 'Dupliser listen'
+    BUTTONTITLESHORT: +
+    TITLE: Duplisere
+  SilverCart\ProductLists\Control\Actions\ProductListSetAsDefaultAction:
+    BUTTONTITLE: 'Bruk liste som standard'
+    BUTTONTITLESHORT: D.
+    TITLE: 'bruk som standard'
+  SilverCart\ProductLists\Model\Pages\Includes\ProductListTable:
+    COL_COUNT: 'Antall ting'
+    COL_CREATED: 'Opprettet den'
+    COL_LASTEDITED: 'sist endret kl'
+    COL_NAME: Etternavn
+    NO_LIST_AVAILABLE: 'Ingen ønskelister tilgjengelig ennå.'
+  SilverCart\ProductLists\Model\Pages\ProductListPage:
+    DEFAULT_TITLE: 'Mine overvåkningslister'
+    DEFAULT_URLSEGMENT: liste
+    PLURALNAME: 'Bokmerke sider'
+    SINGULARNAME: 'Bokmerker side'
+    YOUR_LISTS: 'Overvåkningslistene dine'
+  SilverCart\ProductLists\Model\ProductListPosition:
+    PLURALNAME: Ønskelisteplasseringer
+    SINGULARNAME: Ønskelisteposisjon
+  SilverCart\ProductLists\Model\Product\ProductList:
+    AccountRequired: 'Du må være pålogget for å bruke en overvåkningsliste. For registrering?'
+    AccountRequiredInfo: 'Du må være pålogget for å bruke en overvåkningsliste. Etter pålogging eller registrering, blir det valgte elementet automatisk lagt til overvåkningslisten din.'
+    AddThisProduct: 'Legg merke til denne artikkelen på en liste'
+    CreateNewList: 'Opprett en ny liste'
+    DUPLICATION: Kopiere
+    EDIT: 'Rediger liste'
+    EDIT_SHORT: B.
+    ISDEFAULT: 'bruk som standard'
+    My: Min
+    PLURALNAME: Ønskelister
+    PLURALNAME_SHORT: Lister
+    SHOW_DETAILS: 'Vis detaljer'
+    SHOW_DETAILS_SHORT: Detaljer
+    SINGULARNAME: Bokmerker
+    SINGULARNAME_SHORT: liste
+    ShowLists: 'Vis lister'
+    TITLE: Etternavn
+    TITLE_DEFAULT: 'Liste fra klokken {date}'
+    TITLE_DEFAULT_DATEFORMAT: 'dmY H: jeg'

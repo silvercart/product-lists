@@ -1,0 +1,57 @@
+sv:
+  SilverCart:
+    GoToList: 'Till bevakningslistan'
+    ProductAddedToListSingle: 'Artikeln har lagts till i bevakningslistan.'
+  SilverCart\ProductLists:
+    ProductsOnYourList: 'Artiklar på din bevakningslista'
+  SilverCart\ProductLists\Control\Actions\ProductListConvertToCartAction:
+    BUTTONTITLE: 'Lägg till listan i kundvagnen'
+    BUTTONTITLESHORT: Varukorg
+    TITLE: 'Lägg till i kundvagnen'
+  SilverCart\ProductLists\Control\Actions\ProductListDeleteAction:
+    BUTTONTITLE: 'Radera listan'
+    BUTTONTITLESHORT: '-'
+    TITLE: 'Ta bort'
+  SilverCart\ProductLists\Control\Actions\ProductListDuplicateAction:
+    BUTTONTITLE: 'Lista över dubbletter'
+    BUTTONTITLESHORT: +
+    TITLE: Dubbla
+  SilverCart\ProductLists\Control\Actions\ProductListSetAsDefaultAction:
+    BUTTONTITLE: 'Använd lista som standard'
+    BUTTONTITLESHORT: D
+    TITLE: 'Använd som standard'
+  SilverCart\ProductLists\Model\Pages\Includes\ProductListTable:
+    COL_COUNT: Kvantitetsartiklar
+    COL_CREATED: 'Skapad den'
+    COL_LASTEDITED: 'Senast ändrad den'
+    COL_NAME: Namn
+    NO_LIST_AVAILABLE: 'Inga bevakningslistor finns tillgängliga ännu.'
+  SilverCart\ProductLists\Model\Pages\ProductListPage:
+    DEFAULT_TITLE: 'Mina bevakningslistor'
+    DEFAULT_URLSEGMENT: 'Lyssna på'
+    PLURALNAME: 'Sidor med minneslistor'
+    SINGULARNAME: 'Sidan med listan över memon'
+    YOUR_LISTS: 'Dina bevakningslistor'
+  SilverCart\ProductLists\Model\ProductListPosition:
+    PLURALNAME: 'Objekt i bevakningslistan'
+    SINGULARNAME: 'Objekt i bevakningslistan'
+  SilverCart\ProductLists\Model\Product\ProductList:
+    AccountRequired: 'Du måste vara inloggad för att använda en bevakningslista. Till inloggningen?'
+    AccountRequiredInfo: 'Du måste vara inloggad för att använda en bevakningslista. När du har loggat in eller registrerat dig kommer det valda objektet automatiskt att läggas till i din bevakningslista.'
+    AddThisProduct: 'Lägg det här objektet som ett bokmärke på en lista'
+    CreateNewList: 'Skapa en ny lista'
+    DUPLICATION: Kopiera
+    EDIT: 'Redigera listan'
+    EDIT_SHORT: B
+    ISDEFAULT: 'Använd som standard'
+    My: Min
+    PLURALNAME: Övervakningslistor
+    PLURALNAME_SHORT: Lyssna
+    SHOW_DETAILS: 'Visa detaljer'
+    SHOW_DETAILS_SHORT: Detaljer
+    SINGULARNAME: Bevakningslista
+    SINGULARNAME_SHORT: Lista
+    ShowLists: 'Visa listor'
+    TITLE: Namn
+    TITLE_DEFAULT: 'Lista från {date} klockan'
+    TITLE_DEFAULT_DATEFORMAT: 'd.m.Y H:i'

@@ -1,0 +1,56 @@
+sk:
+  SilverCart:
+    GoToList: 'Do zoznamu sledovaných zariadení'
+    ProductAddedToListSingle: 'Položka bola pridaná do zoznamu sledovaných.'
+  SilverCart\ProductLists:
+    ProductsOnYourList: 'Články na vašom zozname sledovaných'
+  SilverCart\ProductLists\Control\Actions\ProductListConvertToCartAction:
+    BUTTONTITLE: 'Pridať zoznam do nákupného košíka'
+    BUTTONTITLESHORT: 'Nákupný košík'
+    TITLE: 'Pridať do nákupného košíka'
+  SilverCart\ProductLists\Control\Actions\ProductListDeleteAction:
+    BUTTONTITLE: 'Odstrániť zoznam'
+    BUTTONTITLESHORT: '-'
+    TITLE: Odstrániť
+  SilverCart\ProductLists\Control\Actions\ProductListDuplicateAction:
+    BUTTONTITLE: 'Duplicitný zoznam'
+    BUTTONTITLESHORT: +
+    TITLE: Duplikát
+  SilverCart\ProductLists\Control\Actions\ProductListSetAsDefaultAction:
+    BUTTONTITLE: 'Použiť zoznam ako predvolené nastavenie'
+    BUTTONTITLESHORT: D
+    TITLE: 'Použiť ako predvolené'
+  SilverCart\ProductLists\Model\Pages\Includes\ProductListTable:
+    COL_COUNT: 'Množstvo Články'
+    COL_CREATED: 'Vytvorené dňa'
+    COL_LASTEDITED: 'Naposledy upravené dňa'
+    COL_NAME: Názov
+  SilverCart\ProductLists\Model\Pages\ProductListPage:
+    DEFAULT_TITLE: 'Moje zoznamy sledovaných zariadení'
+    DEFAULT_URLSEGMENT: počúvať
+    PLURALNAME: 'Stránky zoznamu poznámok'
+    SINGULARNAME: 'Stránka so zoznamom poznámok'
+    YOUR_LISTS: 'Vaše zoznamy sledovaných zariadení'
+  SilverCart\ProductLists\Model\ProductListPosition:
+    PLURALNAME: 'Položky zoznamu sledovaných zariadení'
+    SINGULARNAME: 'Položka zoznamu sledovaných položiek'
+  SilverCart\ProductLists\Model\Product\ProductList:
+    AccountRequired: 'Ak chcete používať zoznam sledovaných položiek, musíte byť prihlásení. Na prihlásenie?'
+    AccountRequiredInfo: 'Ak chcete používať zoznam sledovaných položiek, musíte byť prihlásení. Po prihlásení alebo registrácii sa vybraná položka automaticky pridá do zoznamu sledovaných položiek.'
+    AddThisProduct: 'Záložka tejto položky v zozname'
+    CreateNewList: 'Vytvorenie nového zoznamu'
+    DUPLICATION: Kopírovať
+    EDIT: 'Upraviť zoznam'
+    EDIT_SHORT: B
+    ISDEFAULT: 'Použiť ako predvolené'
+    My: Môj
+    PLURALNAME: 'Sledovacie zoznamy'
+    PLURALNAME_SHORT: Počúvajte
+    SHOW_DETAILS: 'Zobraziť podrobnosti'
+    SHOW_DETAILS_SHORT: 'Podrobnosti na'
+    SINGULARNAME: 'Zoznam sledovaných stránok'
+    SINGULARNAME_SHORT: Zoznam
+    ShowLists: 'Zobraziť zoznamy'
+    TITLE: Názov
+    TITLE_DEFAULT: 'Zoznam od {date} hodiny'
+    TITLE_DEFAULT_DATEFORMAT: 'd.m.Y H:i'

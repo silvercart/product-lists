@@ -1,0 +1,57 @@
+fr:
+  SilverCart:
+    GoToList: 'Sur la liste de surveillance'
+    ProductAddedToListSingle: 'L''article a été ajouté à la liste de surveillance.'
+  SilverCart\ProductLists:
+    ProductsOnYourList: 'Articles sur votre liste de surveillance'
+  SilverCart\ProductLists\Control\Actions\ProductListConvertToCartAction:
+    BUTTONTITLE: 'Ajouter la liste au panier'
+    BUTTONTITLESHORT: 'Panier d''achat'
+    TITLE: 'Ajouter au panier d''achat'
+  SilverCart\ProductLists\Control\Actions\ProductListDeleteAction:
+    BUTTONTITLE: 'Supprimer la liste'
+    BUTTONTITLESHORT: '-'
+    TITLE: Supprimer
+  SilverCart\ProductLists\Control\Actions\ProductListDuplicateAction:
+    BUTTONTITLE: 'Liste des doublons'
+    BUTTONTITLESHORT: +
+    TITLE: Duplicate
+  SilverCart\ProductLists\Control\Actions\ProductListSetAsDefaultAction:
+    BUTTONTITLE: 'Utiliser la liste par défaut'
+    BUTTONTITLESHORT: D
+    TITLE: 'Utiliser par défaut'
+  SilverCart\ProductLists\Model\Pages\Includes\ProductListTable:
+    COL_COUNT: 'Articles en quantité'
+    COL_CREATED: 'Créé le'
+    COL_LASTEDITED: 'Dernière modification le'
+    COL_NAME: Nom
+    NO_LIST_AVAILABLE: 'Aucune liste de surveillance n''est encore disponible.'
+  SilverCart\ProductLists\Model\Pages\ProductListPage:
+    DEFAULT_TITLE: 'Mes listes de surveillance'
+    DEFAULT_URLSEGMENT: écouter
+    PLURALNAME: 'Pages de liste de mémos'
+    SINGULARNAME: 'Page de la liste des mémos'
+    YOUR_LISTS: 'Vos listes de surveillance'
+  SilverCart\ProductLists\Model\ProductListPosition:
+    PLURALNAME: 'Éléments de la liste de surveillance'
+    SINGULARNAME: 'Élément de la liste de surveillance'
+  SilverCart\ProductLists\Model\Product\ProductList:
+    AccountRequired: 'Vous devez être connecté pour utiliser une liste de surveillance. Au login ?'
+    AccountRequiredInfo: 'Vous devez être connecté pour utiliser une liste de surveillance. Après s''être connecté ou enregistré, l''article sélectionné sera automatiquement ajouté à votre liste de surveillance.'
+    AddThisProduct: 'Marquez cet élément sur une liste'
+    CreateNewList: 'Créer une nouvelle liste'
+    DUPLICATION: Copie
+    EDIT: 'Liste d''édition'
+    EDIT_SHORT: B
+    ISDEFAULT: 'Utiliser par défaut'
+    My: Mon
+    PLURALNAME: 'Listes de surveillance'
+    PLURALNAME_SHORT: Écoutez
+    SHOW_DETAILS: 'Afficher les détails'
+    SHOW_DETAILS_SHORT: Détails
+    SINGULARNAME: 'Liste de surveillance'
+    SINGULARNAME_SHORT: Liste
+    ShowLists: 'Afficher les listes'
+    TITLE: Nom
+    TITLE_DEFAULT: 'Liste de {date} horloge'
+    TITLE_DEFAULT_DATEFORMAT: 'd.m.Y H:i'

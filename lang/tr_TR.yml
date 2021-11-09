@@ -1,0 +1,57 @@
+tr_TR:
+  SilverCart:
+    GoToList: 'İzleme listesi'
+    ProductAddedToListSingle: 'Öğe izleme listesine eklendi.'
+  SilverCart\ProductLists:
+    ProductsOnYourList: 'İzleme listenizdeki öğe'
+  SilverCart\ProductLists\Control\Actions\ProductListConvertToCartAction:
+    BUTTONTITLE: 'Listeyi alışveriş sepetine koyun'
+    BUTTONTITLESHORT: 'alışveriş Sepeti'
+    TITLE: 'Sepete ekle'
+  SilverCart\ProductLists\Control\Actions\ProductListDeleteAction:
+    BUTTONTITLE: 'Listeyi sil'
+    BUTTONTITLESHORT: '-'
+    TITLE: Söndürmek
+  SilverCart\ProductLists\Control\Actions\ProductListDuplicateAction:
+    BUTTONTITLE: 'Listeyi çoğalt'
+    BUTTONTITLESHORT: +
+    TITLE: Çiftleme
+  SilverCart\ProductLists\Control\Actions\ProductListSetAsDefaultAction:
+    BUTTONTITLE: 'Listeyi varsayılan olarak kullan'
+    BUTTONTITLESHORT: NS.
+    TITLE: 'standart olarak kullan'
+  SilverCart\ProductLists\Model\Pages\Includes\ProductListTable:
+    COL_COUNT: 'Öğe sayısı'
+    COL_CREATED: 'tarihinde oluşturuldu'
+    COL_LASTEDITED: 'en son değiştirilme tarihi'
+    COL_NAME: Soyadı
+    NO_LIST_AVAILABLE: 'Henüz istek listesi yok.'
+  SilverCart\ProductLists\Model\Pages\ProductListPage:
+    DEFAULT_TITLE: 'İzleme listelerim'
+    DEFAULT_URLSEGMENT: liste
+    PLURALNAME: 'Sayfalara yer işareti koyun'
+    SINGULARNAME: 'Yer imleri sayfası'
+    YOUR_LISTS: 'İzleme listeleriniz'
+  SilverCart\ProductLists\Model\ProductListPosition:
+    PLURALNAME: 'İstek listesi pozisyonları'
+    SINGULARNAME: 'İstek listesi konumu'
+  SilverCart\ProductLists\Model\Product\ProductList:
+    AccountRequired: 'Bir izleme listesini kullanmak için giriş yapmalısınız. Kayıt için?'
+    AccountRequiredInfo: 'Bir izleme listesini kullanmak için giriş yapmalısınız. Oturum açtıktan veya kaydolduktan sonra seçilen öğe otomatik olarak izleme listenize eklenir.'
+    AddThisProduct: 'Bu makaleyi bir listeye not edin'
+    CreateNewList: 'Yeni bir liste oluştur'
+    DUPLICATION: kopyala
+    EDIT: 'Listeyi düzenle'
+    EDIT_SHORT: B.
+    ISDEFAULT: 'standart olarak kullan'
+    My: Benim
+    PLURALNAME: 'İstek listesi'
+    PLURALNAME_SHORT: Listeler
+    SHOW_DETAILS: 'Detayları göster'
+    SHOW_DETAILS_SHORT: Detaylar
+    SINGULARNAME: 'Yer imleri'
+    SINGULARNAME_SHORT: liste
+    ShowLists: 'Listeleri göster'
+    TITLE: Soyadı
+    TITLE_DEFAULT: '{date} saatinden itibaren liste'
+    TITLE_DEFAULT_DATEFORMAT: 'dmY H: ben'

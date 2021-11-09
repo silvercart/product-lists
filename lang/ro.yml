@@ -1,0 +1,57 @@
+ro:
+  SilverCart:
+    GoToList: 'La lista de supraveghere'
+    ProductAddedToListSingle: 'Articolul a fost adăugat la lista de urmărire.'
+  SilverCart\ProductLists:
+    ProductsOnYourList: 'Articolele din lista de urmărire'
+  SilverCart\ProductLists\Control\Actions\ProductListConvertToCartAction:
+    BUTTONTITLE: 'Adaugă lista în coșul de cumpărături'
+    BUTTONTITLESHORT: 'Coș de cumpărături'
+    TITLE: 'Adaugă în coșul de cumpărături'
+  SilverCart\ProductLists\Control\Actions\ProductListDeleteAction:
+    BUTTONTITLE: 'Ștergeți lista'
+    BUTTONTITLESHORT: '-'
+    TITLE: Ștergeți
+  SilverCart\ProductLists\Control\Actions\ProductListDuplicateAction:
+    BUTTONTITLE: 'Listă duplicată'
+    BUTTONTITLESHORT: +
+    TITLE: Duplicat
+  SilverCart\ProductLists\Control\Actions\ProductListSetAsDefaultAction:
+    BUTTONTITLE: 'Utilizați lista ca valoare implicită'
+    BUTTONTITLESHORT: D
+    TITLE: 'Utilizați ca implicit'
+  SilverCart\ProductLists\Model\Pages\Includes\ProductListTable:
+    COL_COUNT: 'Articole de cantitate'
+    COL_CREATED: 'Creat pe'
+    COL_LASTEDITED: 'Ultima modificare la'
+    COL_NAME: Nume
+    NO_LIST_AVAILABLE: 'Încă nu sunt disponibile liste de supraveghere.'
+  SilverCart\ProductLists\Model\Pages\ProductListPage:
+    DEFAULT_TITLE: 'Listele mele de supraveghere'
+    DEFAULT_URLSEGMENT: ascultă
+    PLURALNAME: 'Pagini de listă de memento'
+    SINGULARNAME: 'Pagina cu lista de memo'
+    YOUR_LISTS: 'Listele dumneavoastră de supraveghere'
+  SilverCart\ProductLists\Model\ProductListPosition:
+    PLURALNAME: 'Elemente din lista de supraveghere'
+    SINGULARNAME: 'Element din lista de supraveghere'
+  SilverCart\ProductLists\Model\Product\ProductList:
+    AccountRequired: 'Trebuie să vă conectați pentru a utiliza o listă de supraveghere. La autentificare?'
+    AccountRequiredInfo: 'Trebuie să vă conectați pentru a utiliza o listă de supraveghere. După ce vă conectați sau vă înregistrați, articolul selectat va fi adăugat automat la lista de urmărire.'
+    AddThisProduct: 'Marcați acest element pe o listă'
+    CreateNewList: 'Creați o nouă listă'
+    DUPLICATION: Copiați
+    EDIT: 'Editați lista'
+    EDIT_SHORT: B
+    ISDEFAULT: 'Utilizați ca implicit'
+    My: Meu
+    PLURALNAME: 'Liste de supraveghere'
+    PLURALNAME_SHORT: Ascultă
+    SHOW_DETAILS: 'Arată detalii'
+    SHOW_DETAILS_SHORT: Detalii
+    SINGULARNAME: 'Lista de supraveghere'
+    SINGULARNAME_SHORT: Lista
+    ShowLists: 'Afișați listele'
+    TITLE: Nume
+    TITLE_DEFAULT: 'Lista de la {date} ceas'
+    TITLE_DEFAULT_DATEFORMAT: 'd.m.Y H:i'
