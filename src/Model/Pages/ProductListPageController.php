@@ -64,6 +64,20 @@ class ProductListPageController extends MyAccountHolderController
         $this->currentList = $currentList;
         return $this;
     }
+    
+    public function index(HTTPRequest $request) : HTTPResponse
+    {
+        if ($request->isAjax()) {
+            $json = [
+                'ModalHTML'     => (string) $this->renderWith(get_class($this->data()) . '_AjaxResponse_show'),
+                'ModalSelector' => '#product-lists-modal',
+            ];
+            $body = json_encode($json);
+        } else {
+            $body = $this->render();
+        }
+        return HTTPResponse::create($body);
+    }
 
     /**
      * Action to show a lists details.

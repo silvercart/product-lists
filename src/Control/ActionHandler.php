@@ -57,7 +57,7 @@ class ActionHandler extends Controller
         ) {
             $params    = $request->allParams();
             $productID = $params['ID'];
-            $isAjax    = $request->postVar('isAjax');
+            $isAjax    = $request->isAjax();
             $list      = $this->getListByRequest($request, $customer);
             if ($list instanceof ProductList) {
                 $product = Product::get()->byID($productID);
