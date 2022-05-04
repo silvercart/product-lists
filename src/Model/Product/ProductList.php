@@ -2,6 +2,7 @@
 
 namespace SilverCart\ProductLists\Model\Product;
 
+use Moo\HasOneSelector\Form\Field as HasOneSelector;
 use SilverCart\Dev\Tools;
 use SilverCart\Model\Customer\Customer;
 use SilverCart\Model\Product\Product;
@@ -10,6 +11,7 @@ use SilverCart\ProductLists\Model\Pages\ProductListPage;
 use SilverStripe\Control\Controller;
 use SilverStripe\Control\Director;
 use SilverStripe\i18n\i18n;
+use SilverStripe\Forms\FieldList;
 use SilverStripe\ORM\ArrayList;
 use SilverStripe\ORM\DataObject;
 use SilverStripe\ORM\FieldType\DBBoolean;
@@ -31,6 +33,8 @@ use SilverStripe\Security\Member;
  */
 class ProductList extends DataObject
 {
+    use \SilverCart\ORM\ExtensibleDataObject;
+    
     const SESSION_KEY                 = 'SilverCart.ProductList';
     const ADD_AFTER_LOGIN_SESSION_KEY = 'SilverCart.ProductList.AddAfterLogin';
     /**
@@ -81,6 +85,30 @@ class ProductList extends DataObject
      * @var array
      */
     private static $table_name = 'SilvercartProductList';
+    /**
+     * Summary fields
+     *
+     * @var string
+     */
+    private static $summary_fields = [
+        'Member.CustomerNumber',
+        'Member.InvoiceAddressSummary',
+        'Created.Date',
+        'LastEdited.Date',
+        'ProductListPositions.count',
+        'Title',
+    ];
+    /**
+     * Searchable fields
+     *
+     * @var string
+     */
+    private static $searchable_fields = [
+        'Member.CustomerNumber',
+        'Member.InvoiceAddress.Surname',
+        'Member.InvoiceAddress.Postcode',
+        'Title',
+    ];
     /**
      * The default list
      *
@@ -199,23 +227,40 @@ class ProductList extends DataObject
      */
     public function fieldLabels($includerelations = true)
     {
-        $labels = array_merge(
-                parent::fieldLabels($includerelations),
-                [
-                    'Title'                => _t(ProductList::class . '.TITLE', 'Title'),
-                    'IsDefault'            => _t(ProductList::class . '.ISDEFAULT', 'Is default'),
-                    'DateFormat'           => _t(ProductList::class . '.TITLE_DEFAULT_DATEFORMAT', 'd.m.Y H:i'),
-                    'Duplication'          => _t(ProductList::class . '.DUPLICATION', 'copy'),
-                    'AccountRequired'      => _t(ProductList::class . '.AccountRequired', 'To add products to a list, you have to login or register an account. Click here to login or create an account.'),
-                    'AccountRequiredInfo'  => _t(ProductList::class . '.AccountRequiredInfo', 'To add products to a list, you have to login or register an account. After you are logged in, the product you picked will be automatically added to your list.'),
-                    'Member'               => Member::singleton()->singular_name(),
-                    'ProductListPositions' => ProductListPosition::singleton()->plural_name(),
-                ]
-        );
-        
-        $this->extend('updateFieldLabels', $labels);
-        
-        return $labels;
+        $member = Member::singleton();
+        return $this->defaultFieldLabels($includerelations, [
+            'Title'                => _t(ProductList::class . '.TITLE', 'Title'),
+            'IsDefault'            => _t(ProductList::class . '.ISDEFAULT', 'Is default'),
+            'DateFormat'           => _t(ProductList::class . '.TITLE_DEFAULT_DATEFORMAT', 'd.m.Y H:i'),
+            'Duplication'          => _t(ProductList::class . '.DUPLICATION', 'copy'),
+            'AccountRequired'      => _t(ProductList::class . '.AccountRequired', 'To add products to a list, you have to login or register an account. Click here to login or create an account.'),
+            'AccountRequiredInfo'  => _t(ProductList::class . '.AccountRequiredInfo', 'To add products to a list, you have to login or register an account. After you are logged in, the product you picked will be automatically added to your list.'),
+            'Member'               => $member->i18n_singular_name(),
+            'ProductListPositions' => ProductListPosition::singleton()->i18n_plural_name(),
+            'Member.CustomerNumber'          => $member->fieldLabel('CustomerNumber'),
+            'Member.InvoiceAddress.Surname'  => "{$member->i18n_singular_name()} {$member->InvoiceAddress()->fieldLabel('Surname')}",
+            'Member.InvoiceAddress.Postcode' => "{$member->i18n_singular_name()} {$member->InvoiceAddress()->fieldLabel('Postcode')}",
+            'Member.InvoiceAddressSummary'   => $member->fieldLabel('InvoiceAddress'),
+            'ProductListPositions.count'     => ProductListPosition::singleton()->i18n_plural_name(),
+        ]);
+    }
+    
+    /**
+     * customizes the backends fields, mainly for ModelAdmin
+     *
+     * @return FieldList the fields for the backend
+     */
+    public function getCMSFields() : FieldList
+    {
+        $this->beforeUpdateCMSFields(function(FieldList $fields) {
+            if (class_exists(HasOneSelector::class)) {
+                $fields->removeByName('MemberID');
+                $memberField = HasOneSelector::create('Member', $this->fieldLabel('Member'), $this, Member::class)->setLeftTitle($this->fieldLabel('Member'));
+                $memberField->removeAddable();
+                $fields->insertAfter('IsDefault', $memberField);
+            }
+        });
+        return parent::getCMSFields();
     }
 
     /**

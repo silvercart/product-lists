@@ -5,6 +5,8 @@ de:
     ProductAddedToListSingle: 'Der Artikel wurde zur Merkliste hinzugefügt.'
   SilverCart\ProductLists:
     ProductsOnYourList: 'Artikel auf Ihrer Merkliste'
+  SilverCart\ProductLists\Admin\Controllers\ProductListAdmin:
+    MENUTITLE: Merklisten
   SilverCart\ProductLists\Control\Actions\ProductListConvertToCartAction:
     BUTTONTITLE: 'Liste in den Warenkorb legen'
     BUTTONTITLESHORT: Warenkorb
@@ -33,9 +35,6 @@ de:
     PLURALNAME: Merklisten-Seiten
     SINGULARNAME: Merklisten-Seite
     YOUR_LISTS: 'Ihre Merklisten'
-  SilverCart\ProductLists\Model\ProductListPosition:
-    PLURALNAME: Merklisten-Positionen
-    SINGULARNAME: Merklisten-Position
   SilverCart\ProductLists\Model\Product\ProductList:
     AccountRequired: 'Sie müssen angemeldet sein, um eine Merkliste zu verwenden. Zur Anmeldung?'
     AccountRequiredInfo: 'Sie müssen angemeldet sein, um eine Merkliste zu verwenden. Nach dem Login oder der Registrierung wird der gewählte Artikel automatisch zu Ihrer Merkliste hinzugefügt.'
@@ -59,3 +58,6 @@ de:
     TITLE_DEFAULT: 'Liste vom {date} Uhr'
     TITLE_DEFAULT_DATEFORMAT: 'd.m.Y H:i'
     ThisListIsEmpty: 'Ihre Merkliste ist leer.'
+  SilverCart\ProductLists\Model\Product\ProductListPosition:
+    PLURALNAME: Merklisten-Positionen
+    SINGULARNAME: Merklisten-Position

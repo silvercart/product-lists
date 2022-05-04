@@ -5,6 +5,8 @@ en:
     ProductAddedToListSingle: 'The product was added to your list.'
   SilverCart\ProductLists:
     ProductsOnYourList: 'My Wishlist'
+  SilverCart\ProductLists\Admin\Controllers\ProductListAdmin:
+    MENUTITLE: 'Product Lists'
   SilverCart\ProductLists\Control\Actions\ProductListConvertToCartAction:
     BUTTONTITLE: 'Add this list to cart'
     BUTTONTITLESHORT: Cart
@@ -33,9 +35,6 @@ en:
     PLURALNAME: List-Pages
     SINGULARNAME: List-Page
     YOUR_LISTS: 'Your Lists'
-  SilverCart\ProductLists\Model\ProductListPosition:
-    PLURALNAME: List-Positions
-    SINGULARNAME: List-Position
   SilverCart\ProductLists\Model\Product\ProductList:
     AccountRequired: 'To add products to a list, you have to login or register an account. Click here to login or create an account.'
     AccountRequiredInfo: 'To add products to a list, you have to login or register an account. After you are logged in, the product you picked will be automatically added to your list.'
@@ -59,3 +58,6 @@ en:
     TITLE_DEFAULT: 'List from {date} o''clock'
     TITLE_DEFAULT_DATEFORMAT: 'd.m.Y H:i'
     ThisListIsEmpty: 'This list is empty.'
+  SilverCart\ProductLists\Model\Product\ProductListPosition:
+    PLURALNAME: List-Positions
+    SINGULARNAME: List-Position
