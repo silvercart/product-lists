@@ -26,6 +26,7 @@ use SilverStripe\Security\Member;
  */
 class ActionHandler extends Controller
 {
+    use \SilverCart\View\MessageProvider;
     /**
      * Allowed actions
      *
