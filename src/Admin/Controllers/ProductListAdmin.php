@@ -42,6 +42,18 @@ class ProductListAdmin extends ModelAdmin
      */
     private static $menu_title = 'Product Lists';
     /**
+     * Menu icon
+     * 
+     * @var string
+     */
+    private static $menu_icon = null;
+    /**
+     * Menu icon CSS class
+     * 
+     * @var string
+     */
+    private static $menu_icon_class = 'font-icon-p-list';
+    /**
      * Managed models
      *
      * @var array
