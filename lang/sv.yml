@@ -28,7 +28,7 @@ sv:
     NO_LIST_AVAILABLE: 'Inga bevakningslistor finns tillgängliga ännu.'
   SilverCart\ProductLists\Model\Pages\ProductListPage:
     DEFAULT_TITLE: 'Mina bevakningslistor'
-    DEFAULT_URLSEGMENT: 'Lyssna på'
+    DEFAULT_URLSEGMENT: 'mina-listor'
     PLURALNAME: 'Sidor med minneslistor'
     SINGULARNAME: 'Sidan med listan över memon'
     YOUR_LISTS: 'Dina bevakningslistor'

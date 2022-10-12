@@ -5,9 +5,9 @@ nl_BE:
   SilverCart\ProductLists:
     ProductsOnYourList: 'Artikel toevoegen aan favorietenlijst'
   SilverCart\ProductLists\Control\Actions\ProductListConvertToCartAction:
-    BUTTONTITLE: 'Lijst toevoegen aan winkelwagen'
+    BUTTONTITLE: 'Lijst in winkelwagen'
     BUTTONTITLESHORT: Winkelwagen
-    TITLE: 'Toevoegen aan winkelwagen'
+    TITLE: 'In winkelwagen'
   SilverCart\ProductLists\Control\Actions\ProductListDeleteAction:
     BUTTONTITLE: 'Lijst verwijderen'
     BUTTONTITLESHORT: '-'
