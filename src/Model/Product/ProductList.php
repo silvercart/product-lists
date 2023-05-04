@@ -2,22 +2,26 @@
 
 namespace SilverCart\ProductLists\Model\Product;
 
+use IntlDateFormatter;
 use Moo\HasOneSelector\Form\Field as HasOneSelector;
 use SilverCart\Dev\Tools;
 use SilverCart\Model\Customer\Customer;
 use SilverCart\Model\Product\Product;
+use SilverCart\ORM\ExtensibleDataObject;
 use SilverCart\ProductLists\Control\Actions\ProductListAction;
 use SilverCart\ProductLists\Model\Pages\ProductListPage;
 use SilverStripe\Control\Controller;
 use SilverStripe\Control\Director;
-use SilverStripe\i18n\i18n;
 use SilverStripe\Forms\FieldList;
+use SilverStripe\i18n\i18n;
 use SilverStripe\ORM\ArrayList;
+use SilverStripe\ORM\DataList;
 use SilverStripe\ORM\DataObject;
 use SilverStripe\ORM\FieldType\DBBoolean;
 use SilverStripe\ORM\FieldType\DBText;
 use SilverStripe\ORM\SS_List;
 use SilverStripe\Security\Member;
+use function _t;
 
 /**
  * Product list to allow a customer to create cart-like lists of products.
@@ -33,7 +37,7 @@ use SilverStripe\Security\Member;
  */
 class ProductList extends DataObject
 {
-    use \SilverCart\ORM\ExtensibleDataObject;
+    use ExtensibleDataObject;
     
     const SESSION_KEY                 = 'SilverCart.ProductList';
     const ADD_AFTER_LOGIN_SESSION_KEY = 'SilverCart.ProductList.AddAfterLogin';
@@ -162,7 +166,9 @@ class ProductList extends DataObject
         $locale2Restore = setlocale(LC_ALL, 0);
         $created        = $this->Created;
         setlocale(LC_ALL, $i18nLocale . '.utf8', $i18nLocale);
-        $createdNice    = strftime('%A, %e. %b %Y %H:%M Uhr', strtotime($created));
+        $formatter      = new IntlDateFormatter(Tools::current_locale(), IntlDateFormatter::NONE, IntlDateFormatter::NONE);
+        $formatter->setPattern("EEEE, d. MMM. y hh:mm");
+        $createdNice    = "{$formatter->format(strtotime($created))} " . _t(Tools::class . '.Oclock', "o'clock");
         setlocale(LC_ALL, $locale2Restore);
         return $createdNice;
     }
